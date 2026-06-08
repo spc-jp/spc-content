@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>スマイルプラスコンサルティング｜中小企業のWeb制作・SNS・動画・広告支援</title>
   <meta name="description" content="企業の宝探しをお手伝いします。Web制作・SNS運用・動画・広告・音楽制作を通じて、中小企業の成長をサポートします。">
+  <link rel="icon" type="image/png" href="https://www.smileplusctg.com/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
@@ -802,6 +803,151 @@
       margin-bottom: 8px;
     }
 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       みっけカタログ帯バナー
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    .mikke-catalog-banner {
+      padding: 80px 40px;
+      background: linear-gradient(135deg, #0d1b2e 0%, #1a2d4a 60%, #0e3a4a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mikke-catalog-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b4c8' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .mikke-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mikke-badge {
+      display: inline-block;
+      background: rgba(0,180,200,0.2);
+      border: 1px solid rgba(0,180,200,0.5);
+      color: #00b4c8;
+      padding: 5px 18px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+
+    .mikke-text h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: white;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .mikke-text p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .mikke-points {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mikke-points li {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .mikke-btn {
+      display: inline-block;
+      background: #00b4c8;
+      color: #0d1b2e;
+      padding: 16px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 4px 24px rgba(0,180,200,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .mikke-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,180,200,0.55);
+    }
+
+    .mikke-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mikke-card-stack {
+      position: relative;
+      width: 280px;
+      height: 280px;
+    }
+
+    .mikke-card {
+      position: absolute;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(0,180,200,0.25);
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+      font-weight: 700;
+      backdrop-filter: blur(6px);
+      white-space: nowrap;
+    }
+
+    .mc1 { top: 0; left: 0; transform: rotate(-4deg); }
+    .mc2 { top: 48px; left: 40px; transform: rotate(2deg); background: rgba(0,180,200,0.12); }
+    .mc3 { top: 100px; left: 10px; transform: rotate(-2deg); }
+    .mc4 { top: 152px; left: 48px; transform: rotate(3deg); background: rgba(0,180,200,0.1); }
+
+    .mikke-count {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #00b4c8;
+      color: #0d1b2e;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      box-shadow: 0 4px 20px rgba(0,180,200,0.4);
+    }
+
+    .mikke-count span {
+      font-size: 0.6rem;
+      font-weight: 700;
+      margin-top: 4px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
     /* レスポンシブ */
     @media (max-width: 1024px) { .banner-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
@@ -814,6 +960,9 @@
       .stage-arrow { display: none; }
       .industry-grid { grid-template-columns: repeat(2, 1fr); }
       .step-row { gap: 20px; }
+      .mikke-inner { grid-template-columns: 1fr; gap: 40px; }
+      .mikke-visual { display: none; }
+      .mikke-catalog-banner { padding: 60px 24px; }
     }
     @media (max-width: 600px) {
       .banner-grid { grid-template-columns: 1fr; }
@@ -900,6 +1049,32 @@
     </div>
     <div style="text-align:center;margin-top:40px;" class="fade-in">
       <p style="color:var(--green);font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:700;">✨ そんな課題を、私たちはこれまで一つずつ丁寧に解決してきました。</p>
+    </div>
+  </section>
+
+  <!-- みっけカタログ帯バナー -->
+  <section class="mikke-catalog-banner">
+    <div class="mikke-inner fade-in">
+      <div class="mikke-text">
+        <div class="mikke-badge">🗂 SPC公式ツール</div>
+        <h2>AIアプリを、まず試してみてください</h2>
+        <p>スマイルプラスコンサルティングが開発した中小企業向けAIアプリを60本以上まとめた総合カタログです。<br>無料で体験できるものも多数。「使える！」と感じたらそのままプロ版へ。購入は1クリックで完結します。</p>
+        <ul class="mikke-points">
+          <li>✅ 税理士・士業・製造業・飲食業など業種別に探せる</li>
+          <li>✅ 無料お試し機能つき、まず触ってから判断できる</li>
+          <li>✅ 買い切り・月額など用途に合わせて選べる</li>
+        </ul>
+        <a href="https://mikke-catalog.pages.dev/" class="mikke-btn" target="_blank">🌱 みっけカタログを見てみる →</a>
+      </div>
+      <div class="mikke-visual">
+        <div class="mikke-card-stack">
+          <div class="mikke-card mc1">📊 SEOみっけ</div>
+          <div class="mikke-card mc2">🔍 経験みっけ</div>
+          <div class="mikke-card mc3">🤖 匿名化くん</div>
+          <div class="mikke-card mc4">📝 書面チェックくん</div>
+          <div class="mikke-count">60<span>以上のAIアプリ</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
