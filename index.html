@@ -82,12 +82,13 @@
     .nav-line {
       background: #06C755;
       color: white;
-      padding: 8px 20px;
+      padding: 8px 14px;
       border-radius: 24px;
       text-decoration: none;
       font-size: 0.82rem;
       font-weight: 700;
       transition: opacity 0.3s;
+      white-space: nowrap;
     }
 
     .nav-line:hover { opacity: 0.85; }
@@ -133,10 +134,10 @@
 
     .hero h1 {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(1.5rem, 4.5vw, 3.2rem);
       font-weight: 700;
       color: white;
-      line-height: 1.4;
+      line-height: 1.6;
       margin-bottom: 24px;
       animation: fadeUp 0.8s 0.2s ease both;
     }
@@ -144,10 +145,11 @@
     .hero h1 .gold { color: var(--gold); }
 
     .hero p {
-      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
       color: rgba(255,255,255,0.85);
       margin-bottom: 48px;
       animation: fadeUp 0.8s 0.4s ease both;
+      line-height: 2;
     }
 
     .hero-buttons {
@@ -229,16 +231,10 @@
       text-decoration: none;
       color: var(--dark);
       box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
       border-left: 4px solid var(--green-light);
       display: flex;
       flex-direction: column;
       height: 100%;
-    }
-
-    .banner-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(0,180,200,0.15);
     }
 
     .banner-icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
@@ -953,7 +949,11 @@
     @media (max-width: 768px) {
       nav { padding: 12px 20px; }
       .nav-links { display: none; }
-      .hero { padding: 100px 24px 60px; }
+      .nav-line { font-size: 0.75rem; padding: 7px 12px; }
+      .hero { padding: 100px 28px 60px; }
+      .hero h1 { font-size: 1.55rem; line-height: 1.7; }
+      .hero p { font-size: 0.88rem; line-height: 2; }
+      .hero-badge { font-size: 0.72rem; }
       .contact-form { padding: 32px 20px; }
       .profile-inner { flex-direction: column; text-align: center; gap: 32px; }
       .stage-grid { grid-template-columns: 1fr; }
@@ -993,7 +993,7 @@
     <div class="hero-content">
       <div class="hero-badge">✨ 中小企業の宝探しをお手伝いします</div>
       <h1>「強みなんてないかも…」<br>そう思ったときこそ、<br><span class="gold">新しい成長のチャンス</span>です</h1>
-      <p>Web制作・SNS運用・動画・広告・音楽制作を通じて、<br>企業さまの"眠っている強み"を一緒に見つけ、未来への成長をサポートします。🌱✨</p>
+      <p>Web制作・SNS運用・動画・広告・音楽制作を通じて、<br>企業さまの"眠っている強み"を一緒に見つけ、<br>未来への成長をサポートします。🌱✨</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn-primary">無料Zoom相談を予約する</a>
         <a href="#services" class="btn-secondary">できることを見る 🌱</a>
@@ -1008,30 +1008,26 @@
       <p>現場で得た気づきと、やさしい学びをお届けします</p>
     </div>
     <div class="banner-grid">
-      <a href="#" class="banner-card fade-in">
+      <div class="banner-card fade-in">
         <span class="banner-icon">📌</span>
         <h3>アップデート🔄</h3>
         <p>現場で得た、気づきと学びをやさしく、わかりやすくまとめています🌱</p>
-        <span class="banner-link">つづきを見てみる 🌱 →</span>
-      </a>
-      <a href="#" class="banner-card fade-in">
+      </div>
+      <div class="banner-card fade-in">
         <span class="banner-icon">🧠</span>
         <h3>AI安心レッスン📖</h3>
         <p>「よくわからない」からで大丈夫。AIを安心して使うための、やさしいレッスンです😊</p>
-        <span class="banner-link">やさしく学んでみる 😊 →</span>
-      </a>
-      <a href="#services" class="banner-card fade-in">
+      </div>
+      <div class="banner-card fade-in">
         <span class="banner-icon">💡</span>
         <h3>できること 🎶</h3>
         <p>作業ではなく、想いをカタチに。小さな一歩が、成果につながった物語をご紹介します。</p>
-        <span class="banner-link">できることを見る 🌱 →</span>
-      </a>
-      <a href="#" class="banner-card fade-in">
+      </div>
+      <div class="banner-card fade-in">
         <span class="banner-icon">🚀</span>
         <h3>変化のストーリー🌱</h3>
         <p>悩みから始まった一歩が、やがて成果へと変わりました。変化のストーリーをご紹介します。</p>
-        <span class="banner-link">変化の物語を読む →</span>
-      </a>
+      </div>
     </div>
   </section>
 
@@ -1049,32 +1045,6 @@
     </div>
     <div style="text-align:center;margin-top:40px;" class="fade-in">
       <p style="color:var(--green);font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:700;">✨ そんな課題を、私たちはこれまで一つずつ丁寧に解決してきました。</p>
-    </div>
-  </section>
-
-  <!-- みっけカタログ帯バナー -->
-  <section class="mikke-catalog-banner">
-    <div class="mikke-inner fade-in">
-      <div class="mikke-text">
-        <div class="mikke-badge">🗂 SPC公式ツール</div>
-        <h2>AIアプリを、まず試してみてください</h2>
-        <p>スマイルプラスコンサルティングが開発した中小企業向けAIアプリを60本以上まとめた総合カタログです。<br>無料で体験できるものも多数。「使える！」と感じたらそのままプロ版へ。購入は1クリックで完結します。</p>
-        <ul class="mikke-points">
-          <li>✅ 税理士・士業・製造業・飲食業など業種別に探せる</li>
-          <li>✅ 無料お試し機能つき、まず触ってから判断できる</li>
-          <li>✅ 買い切り・月額など用途に合わせて選べる</li>
-        </ul>
-        <a href="https://mikke-catalog.pages.dev/" class="mikke-btn" target="_blank">🌱 みっけカタログを見てみる →</a>
-      </div>
-      <div class="mikke-visual">
-        <div class="mikke-card-stack">
-          <div class="mikke-card mc1">📊 SEOみっけ</div>
-          <div class="mikke-card mc2">🔍 経験みっけ</div>
-          <div class="mikke-card mc3">🤖 匿名化くん</div>
-          <div class="mikke-card mc4">📝 書面チェックくん</div>
-          <div class="mikke-count">60<span>以上のAIアプリ</span></div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1140,7 +1110,6 @@
         <div class="service-top"><h3>Web制作</h3><div class="sub">伝わるホームページで、第一印象を変える</div></div>
         <div class="service-body">
           <p>スマホ対応・検索に強い設計で、"選ばれる"ホームページへ進化させます。</p>
-          <a href="#" class="service-link">変化のストーリーへ 🌱 →</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1150,7 +1119,6 @@
         <div class="service-top"><h3>SNS戦略・運用</h3><div class="sub">投稿ひとつで、ファンが広がる</div></div>
         <div class="service-body">
           <p>InstagramやFacebookで「続けられる仕組み」を一緒につくり、共感と信頼に変えます。</p>
-          <a href="#" class="service-link">変化のストーリーへ 🌱 →</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1160,7 +1128,6 @@
         <div class="service-top"><h3>動画コンテンツ</h3><div class="sub">2分の動画で、会社の想いが伝わる</div></div>
         <div class="service-body">
           <p>ストーリー性ある短い動画で、経営者の想いを"わかりやすく"届けます。</p>
-          <a href="#" class="service-link">変化のストーリーへ 🌱 →</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1170,7 +1137,6 @@
         <div class="service-top"><h3>広告運用</h3><div class="sub">無駄なく届く、広告のかけ方</div></div>
         <div class="service-body">
           <p>GoogleやSNS広告を分析し、必要な人にだけ届けることで、効果を最大化します。</p>
-          <a href="#" class="service-link">変化のストーリーへ 🌱 →</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1180,7 +1146,6 @@
         <div class="service-top"><h3>音楽制作</h3><div class="sub">心に響くメロディで、ブランドに彩りを添える</div></div>
         <div class="service-body">
           <p>オリジナル楽曲やBGMを制作し、SNS投稿を"記憶に残る体験"へと変えていきます。</p>
-          <a href="#" class="service-link">変化のストーリーへ 🌱 →</a>
         </div>
       </div>
       <div class="service-card fade-in">
@@ -1190,7 +1155,6 @@
         <div class="service-top"><h3>AI安心レッスン</h3><div class="sub">「よくわからない」からで大丈夫</div></div>
         <div class="service-body">
           <p>ChatGPTなど、ビジネスに活かせるAIツールの使い方をやさしくサポートします。</p>
-          <a href="#" class="service-link">やさしく学んでみる 😊 →</a>
         </div>
       </div>
     </div>
@@ -1245,6 +1209,32 @@
           <span class="industry-tag">SNS運用</span>
           <span class="industry-tag">LINE配信</span>
           <span class="industry-tag">メニュー動画</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- みっけカタログ帯バナー -->
+  <section class="mikke-catalog-banner">
+    <div class="mikke-inner fade-in">
+      <div class="mikke-text">
+        <div class="mikke-badge">🗂 SPC公式ツール</div>
+        <h2>AIアプリを、まず試してみてください</h2>
+        <p>スマイルプラスコンサルティングが開発した中小企業向けAIアプリを60本以上まとめた総合カタログです。<br>無料で体験できるものも多数。「使える！」と感じたらそのままプロ版へ。購入は1クリックで完結します。</p>
+        <ul class="mikke-points">
+          <li>✅ 税理士・士業・製造業・飲食業など業種別に探せる</li>
+          <li>✅ 無料お試し機能つき、まず触ってから判断できる</li>
+          <li>✅ 買い切り・月額など用途に合わせて選べる</li>
+        </ul>
+        <a href="https://mikke-catalog.pages.dev/" class="mikke-btn" target="_blank">🌱 みっけカタログを見てみる →</a>
+      </div>
+      <div class="mikke-visual">
+        <div class="mikke-card-stack">
+          <div class="mikke-card mc1">📊 SEOみっけ</div>
+          <div class="mikke-card mc2">🔍 経験みっけ</div>
+          <div class="mikke-card mc3">🤖 匿名化くん</div>
+          <div class="mikke-card mc4">📝 書面チェックくん</div>
+          <div class="mikke-count">60<span>以上のAIアプリ</span></div>
         </div>
       </div>
     </div>
