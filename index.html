@@ -30,7 +30,6 @@
       overflow-x: hidden;
     }
 
-    /* ナビゲーション */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -93,7 +92,6 @@
 
     .nav-line:hover { opacity: 0.85; }
 
-    /* ヒーローセクション */
     .hero {
       min-height: 100vh;
       background: linear-gradient(135deg, #0d1b2e 0%, #1a2d4a 60%, #00b4c8 100%);
@@ -193,7 +191,6 @@
 
     .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
-    /* バナーセクション (4列グリッド) */
     .banners {
       padding: 80px 40px;
       background: var(--light);
@@ -228,7 +225,6 @@
       background: white;
       border-radius: 16px;
       padding: 24px 20px;
-      text-decoration: none;
       color: var(--dark);
       box-shadow: 0 2px 12px rgba(0,0,0,0.05);
       border-left: 4px solid var(--green-light);
@@ -240,9 +236,7 @@
     .banner-icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
     .banner-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.05rem; color: var(--green); margin-bottom: 10px; }
     .banner-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; flex-grow: 1; }
-    .banner-link { display: inline-block; margin-top: 14px; font-size: 0.8rem; color: var(--green-light); font-weight: 700; }
 
-    /* お悩みセクション */
     .worries {
       padding: 80px 40px;
       background: var(--white);
@@ -269,7 +263,6 @@
 
     .worry-item .icon { font-size: 1.4rem; flex-shrink: 0; }
 
-    /* サービスセクション */
     .services {
       padding: 80px 40px;
       background: var(--light);
@@ -308,9 +301,7 @@
       transition: transform 0.5s ease;
     }
 
-    .service-card:hover .service-image img {
-      transform: scale(1.05);
-    }
+    .service-card:hover .service-image img { transform: scale(1.05); }
 
     .service-top {
       padding: 24px 24px 0;
@@ -319,18 +310,16 @@
 
     .service-top h3 { font-family: 'Noto Serif JP', serif; font-size: 1.2rem; margin-bottom: 4px; }
     .service-top .sub { font-size: 0.8rem; color: var(--gray); font-weight: normal; }
-    
-    .service-body { 
-      padding: 16px 24px 24px; 
-      flex-grow: 1; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: space-between; 
-    }
-    .service-body p { font-size: 0.87rem; color: var(--gray); line-height: 1.8; margin-bottom: 16px;}
-    .service-link { display: inline-block; color: var(--green-light); font-size: 0.82rem; font-weight: 700; text-decoration: none; }
 
-    /* CTAセクション (画像 1.jpg 再現) */
+    .service-body {
+      padding: 16px 24px 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-body p { font-size: 0.87rem; color: var(--gray); line-height: 1.8; }
+
     .cta {
       padding: 100px 40px;
       background: linear-gradient(135deg, #00b4c8, #1a2d4a);
@@ -357,7 +346,6 @@
     .cta-btn:hover { transform: translateY(-3px); }
     .cta-footer-note { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; max-width: 700px; margin: 0 auto; }
 
-    /* プロフィール */
     .profile {
       padding: 80px 40px;
       background: var(--white);
@@ -386,7 +374,6 @@
     .sns-line { background: #06C755; }
     .sns-note { background: #41c9b4; }
 
-    /* お問い合わせフォーム */
     .contact {
       padding: 80px 40px;
       background: var(--light);
@@ -420,11 +407,10 @@
     }
 
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-        border-color: var(--green-light);
-        outline: none;
+      border-color: var(--green-light);
+      outline: none;
     }
 
-    /* 画像 2.jpg 完全再現用セレクトボックス */
     .form-group select {
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
@@ -449,7 +435,6 @@
     }
     .btn-submit:hover { background: var(--dark); transform: translateY(-2px); }
 
-    /* 確認モーダル */
     #confirmModal {
       display: none;
       position: fixed;
@@ -481,7 +466,6 @@
     .btn-cancel { background: #eee; color: var(--gray); }
     .btn-send { background: var(--green-light); color: white; }
 
-    /* 送信結果表示 */
     #resultDisplay {
       display: none;
       text-align: center;
@@ -492,7 +476,7 @@
     .result-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
     .result-title { font-family: 'Noto Serif JP', serif; font-size: 1.4rem; color: var(--green); margin-bottom: 16px; }
     .result-text { font-size: 0.95rem; color: var(--gray); margin-bottom: 24px; line-height: 1.8; }
-    
+
     .btn-back {
       display: inline-block;
       padding: 12px 30px;
@@ -504,7 +488,6 @@
       border: 1px solid var(--green);
     }
 
-    /* フッター */
     footer {
       background: var(--dark);
       color: rgba(255,255,255,0.7);
@@ -518,7 +501,6 @@
     .footer-policy a:hover { color: white; }
     .footer-copy { font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
 
-    /* LINE固定ボタン */
     .line-float {
       position: fixed;
       bottom: 28px;
@@ -539,14 +521,11 @@
     }
     .line-float:hover { transform: translateY(-4px); }
 
-    /* アニメーション */
     .fade-in { opacity: 0; transform: translateY(24px); transition: 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━
-       3層サービスセクション
-    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* 3層サービスセクション */
     .three-stage {
       padding: 80px 40px;
       background: var(--white);
@@ -570,21 +549,9 @@
       flex-direction: column;
     }
 
-    .stage-card:nth-child(1) {
-      background: var(--green-pale);
-      border-right: 1px solid rgba(0,180,200,0.2);
-    }
-
-    .stage-card:nth-child(2) {
-      background: #1a2d4a;
-      color: white;
-    }
-
-    .stage-card:nth-child(3) {
-      background: var(--green-light);
-      color: white;
-      border-left: 1px solid rgba(255,255,255,0.2);
-    }
+    .stage-card:nth-child(1) { background: var(--green-pale); border-right: 1px solid rgba(0,180,200,0.2); }
+    .stage-card:nth-child(2) { background: #1a2d4a; color: white; }
+    .stage-card:nth-child(3) { background: var(--green-light); color: white; border-left: 1px solid rgba(255,255,255,0.2); }
 
     .stage-label {
       display: inline-block;
@@ -601,43 +568,16 @@
     .stage-card:nth-child(3) .stage-label { background: rgba(255,255,255,0.2); color: white; }
 
     .stage-icon { font-size: 2.2rem; margin-bottom: 16px; }
-    .stage-card h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-    }
+    .stage-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; margin-bottom: 12px; }
     .stage-card:nth-child(1) h3 { color: var(--green); }
 
-    .stage-price {
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      opacity: 0.85;
-    }
+    .stage-price { font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; opacity: 0.85; }
 
-    .stage-card p {
-      font-size: 0.85rem;
-      line-height: 1.8;
-      flex-grow: 1;
-    }
-
+    .stage-card p { font-size: 0.85rem; line-height: 1.8; flex-grow: 1; }
     .stage-card:nth-child(1) p { color: var(--gray); }
 
-    .stage-items {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .stage-item {
-      font-size: 0.82rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      opacity: 0.9;
-    }
-
+    .stage-items { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .stage-item { font-size: 0.82rem; display: flex; align-items: flex-start; gap: 8px; opacity: 0.9; }
     .stage-card:nth-child(1) .stage-item { color: var(--dark); }
 
     .stage-arrow {
@@ -658,9 +598,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━
-       対応業種セクション
-    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* 対応業種セクション */
     .industries {
       padding: 80px 40px;
       background: var(--light);
@@ -683,128 +621,16 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .industry-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(0,180,200,0.15);
-    }
+    .industry-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,180,200,0.15); }
 
-    .industry-icon {
-      font-size: 2.4rem;
-      margin-bottom: 16px;
-    }
+    .industry-icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .industry-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.05rem; color: var(--green); margin-bottom: 12px; }
 
-    .industry-card h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.05rem;
-      color: var(--green);
-      margin-bottom: 12px;
-    }
+    .industry-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 14px; }
+    .industry-tag { background: var(--green-pale); color: var(--green); font-size: 0.72rem; padding: 4px 10px; border-radius: 12px; font-weight: 700; }
+    .industry-card p { font-size: 0.82rem; color: var(--gray); line-height: 1.7; }
 
-    .industry-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      justify-content: center;
-      margin-top: 14px;
-    }
-
-    .industry-tag {
-      background: var(--green-pale);
-      color: var(--green);
-      font-size: 0.72rem;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-weight: 700;
-    }
-
-    .industry-card p {
-      font-size: 0.82rem;
-      color: var(--gray);
-      line-height: 1.7;
-    }
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━
-       伴走の流れSTEPセクション
-    ━━━━━━━━━━━━━━━━━━━━━━━ */
-    .how-we-work {
-      padding: 80px 40px;
-      background: var(--white);
-    }
-
-    .steps-container {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .step-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 32px;
-      position: relative;
-    }
-
-    .step-row:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      left: 31px;
-      top: 64px;
-      width: 2px;
-      height: calc(100% + 0px);
-      background: linear-gradient(to bottom, var(--green-light), var(--green-pale));
-    }
-
-    .step-number {
-      flex-shrink: 0;
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: var(--green);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      position: relative;
-      z-index: 1;
-    }
-
-    .step-content {
-      padding: 12px 0 48px;
-    }
-
-    .step-content h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.15rem;
-      color: var(--green);
-      margin-bottom: 8px;
-    }
-
-    .step-content p {
-      font-size: 0.9rem;
-      color: var(--gray);
-      line-height: 1.8;
-      max-width: 600px;
-    }
-
-    .step-highlight {
-      display: inline-block;
-      background: var(--green-pale);
-      color: var(--green);
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 3px 12px;
-      border-radius: 12px;
-      margin-bottom: 8px;
-    }
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━
-       みっけカタログ帯バナー
-    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* みっけカタログ帯バナー */
     .mikke-catalog-banner {
       padding: 80px 40px;
       background: linear-gradient(135deg, #0d1b2e 0%, #1a2d4a 60%, #0e3a4a 100%);
@@ -843,33 +669,11 @@
       margin-bottom: 20px;
     }
 
-    .mikke-text h2 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      color: white;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
+    .mikke-text h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem, 3vw, 2rem); color: white; margin-bottom: 20px; line-height: 1.5; }
+    .mikke-text p { font-size: 0.92rem; color: rgba(255,255,255,0.78); line-height: 1.9; margin-bottom: 24px; }
 
-    .mikke-text p {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.78);
-      line-height: 1.9;
-      margin-bottom: 24px;
-    }
-
-    .mikke-points {
-      list-style: none;
-      margin-bottom: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .mikke-points li {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.9);
-    }
+    .mikke-points { list-style: none; margin-bottom: 36px; display: flex; flex-direction: column; gap: 10px; }
+    .mikke-points li { font-size: 0.88rem; color: rgba(255,255,255,0.9); }
 
     .mikke-btn {
       display: inline-block;
@@ -885,22 +689,11 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .mikke-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0,180,200,0.55);
-    }
+    .mikke-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,180,200,0.55); }
 
-    .mikke-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    .mikke-visual { display: flex; justify-content: center; align-items: center; }
 
-    .mikke-card-stack {
-      position: relative;
-      width: 280px;
-      height: 280px;
-    }
+    .mikke-card-stack { position: relative; width: 280px; height: 280px; }
 
     .mikke-card {
       position: absolute;
@@ -922,13 +715,11 @@
 
     .mikke-count {
       position: absolute;
-      bottom: 0;
-      right: 0;
+      bottom: 0; right: 0;
       background: #00b4c8;
       color: #0d1b2e;
       border-radius: 50%;
-      width: 100px;
-      height: 100px;
+      width: 100px; height: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -940,11 +731,58 @@
       box-shadow: 0 4px 20px rgba(0,180,200,0.4);
     }
 
-    .mikke-count span {
-      font-size: 0.6rem;
+    .mikke-count span { font-size: 0.6rem; font-weight: 700; margin-top: 4px; font-family: 'Noto Sans JP', sans-serif; }
+
+    /* 伴走の流れSTEPセクション */
+    .how-we-work { padding: 80px 40px; background: var(--white); }
+
+    .steps-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+
+    .step-row { display: flex; align-items: flex-start; gap: 32px; position: relative; }
+
+    .step-row:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 31px; top: 64px;
+      width: 2px;
+      height: calc(100% + 0px);
+      background: linear-gradient(to bottom, var(--green-light), var(--green-pale));
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.3rem;
       font-weight: 700;
-      margin-top: 4px;
-      font-family: 'Noto Sans JP', sans-serif;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-content { padding: 12px 0 48px; }
+    .step-content h3 { font-family: 'Noto Serif JP', serif; font-size: 1.15rem; color: var(--green); margin-bottom: 8px; }
+    .step-content p { font-size: 0.9rem; color: var(--gray); line-height: 1.8; max-width: 600px; }
+
+    .step-highlight {
+      display: inline-block;
+      background: var(--green-pale);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+
+    /* アンカーリンクの固定ヘッダー対策 */
+    #plan, #services, #industries, #tools, #profile, #contact {
+      scroll-margin-top: 80px;
     }
 
     /* レスポンシブ */
@@ -975,7 +813,6 @@
 </head>
 <body>
 
-  <!-- ナビゲーション -->
   <nav>
     <a href="#" class="nav-logo">
       <img src="rogo.png" alt="スマイルプラスコンサルティング" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -985,13 +822,13 @@
       <li><a href="#plan">支援プラン</a></li>
       <li><a href="#services">できること</a></li>
       <li><a href="#industries">対応業種</a></li>
+      <li><a href="#tools">公式ツール</a></li>
       <li><a href="#profile">私達について</a></li>
       <li><a href="#contact">お問い合わせ</a></li>
     </ul>
     <a href="https://lin.ee/s9t1ERI" class="nav-line" target="_blank">🌱 LINEで相談</a>
   </nav>
 
-  <!-- ヒーロー -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-badge">✨ 中小企業の宝探しをお手伝いします</div>
@@ -1004,7 +841,6 @@
     </div>
   </section>
 
-  <!-- バナー（コンテンツ案内） -->
   <section class="banners">
     <div class="section-title fade-in">
       <h2>SPCからのご案内</h2>
@@ -1034,7 +870,6 @@
     </div>
   </section>
 
-  <!-- お悩みセクション -->
   <section class="worries">
     <div class="section-title fade-in">
       <h2>こんなお悩みありませんか？</h2>
@@ -1051,7 +886,6 @@
     </div>
   </section>
 
-  <!-- 3層サービス設計セクション -->
   <section class="three-stage" id="plan">
     <div class="section-title fade-in">
       <h2>3つのステージで伴走します</h2>
@@ -1099,7 +933,6 @@
     </div>
   </section>
 
-  <!-- サービスセクション -->
   <section class="services" id="services">
     <div class="section-title fade-in">
       <h2>💡 できること</h2>
@@ -1107,63 +940,38 @@
     </div>
     <div class="service-grid">
       <div class="service-card fade-in">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Web制作">
-        </div>
+        <div class="service-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Web制作"></div>
         <div class="service-top"><h3>Web制作</h3><div class="sub">伝わるホームページで、第一印象を変える</div></div>
-        <div class="service-body">
-          <p>スマホ対応・検索に強い設計で、"選ばれる"ホームページへ進化させます。</p>
-        </div>
+        <div class="service-body"><p>スマホ対応・検索に強い設計で、"選ばれる"ホームページへ進化させます。</p></div>
       </div>
       <div class="service-card fade-in">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="SNS戦略・運用">
-        </div>
+        <div class="service-image"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="SNS戦略・運用"></div>
         <div class="service-top"><h3>SNS戦略・運用</h3><div class="sub">投稿ひとつで、ファンが広がる</div></div>
-        <div class="service-body">
-          <p>InstagramやFacebookで「続けられる仕組み」を一緒につくり、共感と信頼に変えます。</p>
-        </div>
+        <div class="service-body"><p>InstagramやFacebookで「続けられる仕組み」を一緒につくり、共感と信頼に変えます。</p></div>
       </div>
       <div class="service-card fade-in">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="動画コンテンツ">
-        </div>
+        <div class="service-image"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="動画コンテンツ"></div>
         <div class="service-top"><h3>動画コンテンツ</h3><div class="sub">2分の動画で、会社の想いが伝わる</div></div>
-        <div class="service-body">
-          <p>ストーリー性ある短い動画で、経営者の想いを"わかりやすく"届けます。</p>
-        </div>
+        <div class="service-body"><p>ストーリー性ある短い動画で、経営者の想いを"わかりやすく"届けます。</p></div>
       </div>
       <div class="service-card fade-in">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="広告運用">
-        </div>
+        <div class="service-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="広告運用"></div>
         <div class="service-top"><h3>広告運用</h3><div class="sub">無駄なく届く、広告のかけ方</div></div>
-        <div class="service-body">
-          <p>GoogleやSNS広告を分析し、必要な人にだけ届けることで、効果を最大化します。</p>
-        </div>
+        <div class="service-body"><p>GoogleやSNS広告を分析し、必要な人にだけ届けることで、効果を最大化します。</p></div>
       </div>
       <div class="service-card fade-in">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=600&q=80" alt="音楽制作">
-        </div>
+        <div class="service-image"><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=600&q=80" alt="音楽制作"></div>
         <div class="service-top"><h3>音楽制作</h3><div class="sub">心に響くメロディで、ブランドに彩りを添える</div></div>
-        <div class="service-body">
-          <p>オリジナル楽曲やBGMを制作し、SNS投稿を"記憶に残る体験"へと変えていきます。</p>
-        </div>
+        <div class="service-body"><p>オリジナル楽曲やBGMを制作し、SNS投稿を"記憶に残る体験"へと変えていきます。</p></div>
       </div>
       <div class="service-card fade-in">
-        <div class="service-image">
-          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80" alt="AI安心レッスン">
-        </div>
+        <div class="service-image"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80" alt="AI安心レッスン"></div>
         <div class="service-top"><h3>AI安心レッスン</h3><div class="sub">「よくわからない」からで大丈夫</div></div>
-        <div class="service-body">
-          <p>ChatGPTなど、ビジネスに活かせるAIツールの使い方をやさしくサポートします。</p>
-        </div>
+        <div class="service-body"><p>ChatGPTなど、ビジネスに活かせるAIツールの使い方をやさしくサポートします。</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 対応業種セクション -->
   <section class="industries" id="industries">
     <div class="section-title fade-in">
       <h2>🏢 対応業種</h2>
@@ -1218,7 +1026,7 @@
   </section>
 
   <!-- みっけカタログ帯バナー -->
-  <section class="mikke-catalog-banner">
+  <section class="mikke-catalog-banner" id="tools">
     <div class="mikke-inner fade-in">
       <div class="mikke-text">
         <div class="mikke-badge">🗂 SPC公式ツール</div>
@@ -1285,7 +1093,6 @@
     </div>
   </section>
 
-  <!-- CTAセクション (画像 1.jpg 完全再現) -->
   <section class="cta">
     <h2 class="fade-in">ここから"あなたの宝探し"が始まります</h2>
     <p class="cta-desc fade-in">
@@ -1302,7 +1109,6 @@
     </p>
   </section>
 
-  <!-- プロフィール -->
   <section class="profile" id="profile">
     <div class="profile-inner">
       <div class="profile-text fade-in">
@@ -1320,25 +1126,18 @@
     </div>
   </section>
 
-  <!-- お問い合わせ -->
   <section class="contact" id="contact">
     <div class="section-title fade-in">
       <h2>お問い合わせ</h2>
       <p>気になることがあれば、お気軽にご相談ください😊</p>
     </div>
-    
     <div class="contact-form fade-in">
-      <!-- 
-        重要: action属性のURL最後にあるIDを、ご自身のFormspree IDに差し替えてください。
-      -->
       <form id="contactForm" action="https://formspree.io/f/mqaeajyl" method="POST">
         <div class="form-name-row">
           <div class="form-group"><label>姓</label><input type="text" name="last_name" id="lastName" placeholder="山田" required></div>
           <div class="form-group"><label>名</label><input type="text" name="first_name" id="firstName" placeholder="太郎" required></div>
         </div>
         <div class="form-group"><label>メールアドレス</label><input type="email" name="email" id="email" placeholder="example@gmail.com" required></div>
-        
-        <!-- ご指定のプルダウン項目 (画像 2.jpg 再現) -->
         <div class="form-group">
           <label>お問合せ内容 *</label>
           <select name="subject" id="subject" required>
@@ -1356,8 +1155,6 @@
         <div class="form-group"><label>メッセージ</label><textarea name="message" id="message" placeholder="ご相談内容をお書きください"></textarea></div>
         <button type="submit" class="btn-submit">入力内容を確認する 🌱</button>
       </form>
-
-      <!-- 送信結果表示画面 -->
       <div id="resultDisplay">
         <div id="successContent">
           <span class="result-icon">✅</span>
@@ -1375,7 +1172,6 @@
     </div>
   </section>
 
-  <!-- 確認モーダル -->
   <div id="confirmModal">
     <div class="modal-content">
       <h3 style="font-family:'Noto Serif JP',serif;margin-bottom:20px;color:var(--green);text-align:center;">入力内容の確認</h3>
@@ -1399,13 +1195,11 @@
   <a href="https://lin.ee/s9t1ERI" class="line-float" target="_blank">🌱 LINEで無料相談</a>
 
   <script>
-    // スクロール時のフェードインアニメーション
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // フォームの要素取得
     const form = document.getElementById('contactForm');
     const modal = document.getElementById('confirmModal');
     const resultDisplay = document.getElementById('resultDisplay');
@@ -1415,7 +1209,6 @@
     const btnFinalSend = document.getElementById('btnFinalSend');
     const errorMessageEl = document.getElementById('errorMessage');
 
-    // 「入力内容を確認する」ボタン押下時
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       document.getElementById('confirmName').textContent = document.getElementById('lastName').value + ' ' + document.getElementById('firstName').value;
@@ -1425,27 +1218,21 @@
       modal.style.display = 'flex';
     });
 
-    // 「修正する」ボタン押下時
     btnCancel.addEventListener('click', () => { modal.style.display = 'none'; });
 
-    // 「SPCへ送る」ボタン押下時
     btnFinalSend.addEventListener('click', async () => {
       btnFinalSend.disabled = true;
       btnFinalSend.textContent = '送信中...';
-      
       const formData = new FormData(form);
-      
       try {
         const response = await fetch(form.action, {
           method: 'POST',
           body: formData,
           headers: { 'Accept': 'application/json' }
         });
-        
         modal.style.display = 'none';
         form.style.display = 'none';
         resultDisplay.style.display = 'block';
-
         if (response.ok) {
           successContent.style.display = 'block';
           errorContent.style.display = 'none';
@@ -1454,23 +1241,19 @@
           throw new Error(data.error || '送信プロセスで問題が発生しました。');
         }
       } catch (error) {
-        // エラー時でも画面が白くならず、エラー画面を表示する
         modal.style.display = 'none';
         form.style.display = 'none';
         resultDisplay.style.display = 'block';
         successContent.style.display = 'none';
         errorContent.style.display = 'block';
-        
-        // Formspreeのよくあるエラー（Form not found等）の場合は分かりやすいメッセージにする
         if(error.message.includes('not found') || error.message.includes('fetch')){
-            errorMessageEl.innerHTML = "※テスト送信が失敗する場合、Formspreeのメール認証（初期設定）が完了しているかご確認ください。<br><br>原因: " + error.message;
+          errorMessageEl.innerHTML = "※テスト送信が失敗する場合、Formspreeのメール認証（初期設定）が完了しているかご確認ください。<br><br>原因: " + error.message;
         } else {
-            errorMessageEl.innerHTML = `原因: ${error.message}<br>時間をおいて再度お試しいただくか、LINEよりお問い合わせください。`;
+          errorMessageEl.innerHTML = `原因: ${error.message}<br>時間をおいて再度お試しいただくか、LINEよりお問い合わせください。`;
         }
       }
     });
 
-    // モーダルの背景をクリックした時に閉じる
     window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; };
   </script>
 </body>
