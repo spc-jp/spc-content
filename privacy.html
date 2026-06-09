@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy｜スマイルプラスコンサルティング</title>
+  <link rel="icon" type="image/png" href="https://www.smileplusctg.com/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #223670;
+      --gold: #D0A900;
+      --green: #1a7a6e;
+      --green-light: #00b4c8;
+      --dark: #1a1a2e;
+      --gray: #666;
+      --bg: #f8f9fb;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.8;
+    }
+
+    /* ヘッダー */
+    header {
+      background: var(--navy);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      color: white;
+      text-decoration: none;
+    }
+
+    .header-back {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: all 0.2s;
+    }
+
+    .header-back:hover {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 760px;
+      margin: 60px auto 80px;
+      padding: 0 24px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .page-title h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.8rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .page-title p {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .policy-card {
+      background: white;
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    .policy-lead {
+      font-size: 0.95rem;
+      color: var(--dark);
+      line-height: 2;
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .policy-section {
+      margin-bottom: 36px;
+    }
+
+    .policy-section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 14px;
+      padding-left: 14px;
+      border-left: 3px solid var(--green-light);
+    }
+
+    .policy-section p,
+    .policy-section ul {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 2;
+    }
+
+    .policy-section ul {
+      list-style: none;
+      padding-left: 4px;
+    }
+
+    .policy-section ul li {
+      padding-left: 1.2em;
+      text-indent: -1.2em;
+    }
+
+    .policy-section ul li::before {
+      content: '・';
+      color: var(--green-light);
+    }
+
+    .policy-note {
+      font-size: 0.82rem;
+      color: var(--gray);
+      background: #f0f9fa;
+      border-left: 3px solid var(--green-light);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 12px;
+      line-height: 1.8;
+    }
+
+    .policy-contact {
+      background: #f4f6fb;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 40px;
+    }
+
+    .policy-contact h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .policy-contact p {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 2;
+    }
+
+    .policy-contact a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .policy-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .policy-closing {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 2;
+    }
+
+    /* フッター */
+    footer {
+      background: var(--navy);
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.88rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 16px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; }
+      main { margin: 40px auto 60px; }
+      .policy-card { padding: 28px 20px; }
+      .page-title h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-logo">スマイルプラスコンサルティング</a>
+    <a href="index.html" class="header-back">← トップへ戻る</a>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <h1>Privacy Policy</h1>
+      <p>プライバシーポリシー（個人情報の取り扱いについて）</p>
+    </div>
+
+    <div class="policy-card">
+
+      <p class="policy-lead">スマイルプラスコンサルティング（以下「当社」）は、お客様からお預かりした大切な情報を、丁寧に、そして安全に扱うことをお約束します。安心してサービスをご利用いただけるよう、以下の方針を定めています。</p>
+
+      <div class="policy-section">
+        <h2>1. お預かりする情報について</h2>
+        <p>お問い合わせフォームや公式LINEでのご登録の際に、お名前やメールアドレスなどを伺う場合があります。これらの情報は、ご連絡やサービスのご案内に使用いたします。</p>
+        <div class="policy-note">当社ではAIツールを利用することがありますが、お客様の情報が外部AIサービスの学習に利用されることはありませんのでご安心ください。</div>
+      </div>
+
+      <div class="policy-section">
+        <h2>2. 情報の使い道について</h2>
+        <ul>
+          <li>お問い合わせへのご返信</li>
+          <li>サービスに関するご案内</li>
+          <li>新しいご提案やお役立ち情報のお届け</li>
+          <li>サービスの品質向上のための参考</li>
+        </ul>
+        <div class="policy-note">AIツールを利用する場合は、お客様が特定されない形（内容を要点化・匿名化）でのみ取り扱います。</div>
+      </div>
+
+      <div class="policy-section">
+        <h2>3. 情報の取り扱いと保護について</h2>
+        <p>法令に基づく場合を除き、お客様の同意なく第三者に情報を提供することはありません。外部AIサービスを利用する際も、情報が学習データとして扱われない設定で運用しています。</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>4. 安全な管理について</h2>
+        <p>お預かりした情報は、適切な方法で大切に管理しています。不正アクセスや漏洩を防ぐためのセキュリティ対策を行い、AI利用時においても、個人を特定できる情報を入力しない運用ルールを徹底しています。</p>
+      </div>
+
+      <div class="policy-contact">
+        <h2>5. お問い合わせ先</h2>
+        <p>個人情報の取り扱いについてご不明な点があれば、いつでもお気軽にお問い合わせください。</p>
+        <p>
+          スマイルプラスコンサルティング<br>
+          メール：<a href="mailto:spc@smileplusctg.com">spc@smileplusctg.com</a><br>
+          サイト：<a href="https://www.smileplusctg.com/" target="_blank">https://www.smileplusctg.com/</a>
+        </p>
+      </div>
+
+      <div class="policy-closing">
+        私たちは「信頼できるパートナーでありたい」と考えています。<br>どうぞ安心してご相談ください。🌱
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">スマイルプラスコンサルティング</div>
+    <div class="footer-copy">© Smile Plus Consulting. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
