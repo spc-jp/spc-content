@@ -785,12 +785,87 @@
       scroll-margin-top: 80px;
     }
 
+    /* ハンバーガーメニュー */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0; right: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,180,200,0.15);
+      z-index: 999;
+      padding: 20px 0 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu ul li a {
+      display: block;
+      padding: 14px 32px;
+      font-size: 0.95rem;
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(0,180,200,0.08);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .mobile-menu ul li a:hover {
+      background: var(--green-pale);
+      color: var(--green-light);
+    }
+
+    .mobile-menu .mobile-line {
+      display: block;
+      margin: 20px 32px 0;
+      background: #06C755;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
     /* レスポンシブ */
     @media (max-width: 1024px) { .banner-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
       nav { padding: 12px 20px; }
       .nav-links { display: none; }
-      .nav-line { font-size: 0.75rem; padding: 7px 12px; }
+      .nav-line { display: none; }
+      .hamburger { display: flex; }
       .hero { padding: 100px 28px 60px; }
       .hero h1 { font-size: 1.55rem; line-height: 1.7; }
       .hero p { font-size: 0.88rem; line-height: 2; }
@@ -827,7 +902,23 @@
       <li><a href="#contact">お問い合わせ</a></li>
     </ul>
     <a href="https://lin.ee/s9t1ERI" class="nav-line" target="_blank">🌱 LINEで相談</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- モバイルメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#plan" class="mobile-nav-link">支援プラン</a></li>
+      <li><a href="#services" class="mobile-nav-link">できること</a></li>
+      <li><a href="#industries" class="mobile-nav-link">対応業種</a></li>
+      <li><a href="#tools" class="mobile-nav-link">公式ツール</a></li>
+      <li><a href="#profile" class="mobile-nav-link">私達について</a></li>
+      <li><a href="#contact" class="mobile-nav-link">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="mobile-line" target="_blank">🌱 LINEで無料相談</a>
+  </div>
 
   <section class="hero">
     <div class="hero-content">
@@ -1195,6 +1286,22 @@
   <a href="https://lin.ee/s9t1ERI" class="line-float" target="_blank">🌱 LINEで無料相談</a>
 
   <script>
+    // ハンバーガーメニュー
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.15 });
