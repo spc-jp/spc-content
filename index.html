@@ -785,8 +785,9 @@
       scroll-margin-top: 80px;
     }
 
-    /* スマホ専用改行 */
+    /* スマホ専用改行・PC専用改行 */
     .br-mobile { display: none; }
+    .br-pc { display: block; }
 
     /* ハンバーガーメニュー */
     .hamburger {
@@ -876,6 +877,7 @@
       .hero p { font-size: 0.82rem; line-height: 2; }
       .hero-badge { font-size: 0.72rem; }
       .br-mobile { display: block; }
+      .br-pc { display: none; }
 
       /* 2：バナーサブタイトル */
       .banners { padding: 60px 24px; }
@@ -959,7 +961,7 @@
     <div class="hero-content">
       <div class="hero-badge">✨ 中小企業の宝探しをお手伝いします</div>
       <h1>「強みなんてないかも…」<br>そう思ったときこそ、<br><span class="gold">新しい成長のチャンス</span>です</h1>
-      <p>AI活用支援・Web制作・SNS運用・動画・広告・音楽制作<span class="br-mobile"></span>を通じて、企業さまの"眠っている強み"を一緒に見つけ、<br>未来への成長をサポートします。🌱✨</p>
+      <p>AI活用支援・Web制作・SNS運用・動画・広告・音楽制作を通じて、<span class="br-mobile"></span><br class="br-pc">企業さまの"眠っている強み"を一緒に見つけ、<br>未来への成長をサポートします。🌱✨</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn-primary">無料Zoom相談を予約する</a>
         <a href="#services" class="btn-secondary">できることを見る 🌱</a>
