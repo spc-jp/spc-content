@@ -1046,10 +1046,10 @@
       <div class="hero-news fade-in">
         <div class="hero-news-inner">
           <div class="hero-news-label">📢 ニュースリリース</div>
-          <p class="hero-news-text">AI活用をもっと身近に。中小企業や個人事業主の課題解決をサポートする「みっけカタログ」を公開しました✨<br>集客・業務改善・SNS運用・旅行プラン作成など、目的に合わせて活用できるアプリやツールを一覧でご覧いただけます。</p>
+          <p class="hero-news-text">AI活用をもっと身近に。中小企業や個人事業主の課題解決を支援する「みっけカタログ」を公開しました✨<br>集客・業務改善・SNS運用などに役立つアプリやツールを掲載。あわせて、士業・コンサルタント・講師・IT事業者などの共創パートナーも募集しています🤝🌱</p>
           <div class="hero-news-btns">
             <a href="https://mikke-catalog.pages.dev/" class="hero-news-btn btn-news" target="_blank">📢 みっけカタログを見てみる</a>
-            <a href="https://lin.ee/s9t1ERI" class="hero-news-btn btn-zoom" target="_blank">🎥 無料Zoom相談を予約する</a>
+            <a href="#contact" class="hero-news-btn btn-zoom">📩 お問合せはこちら</a>
           </div>
         </div>
       </div>
@@ -1350,7 +1350,7 @@
       <p>気になることがあれば、お気軽にご相談ください。</p>
     </div>
     <div class="contact-form fade-in">
-      <form id="contactForm" action="https://formspree.io/f/mqaeajyl" method="POST">
+      <form id="contactForm">
         <div class="form-name-row">
           <div class="form-group"><label>姓</label><input type="text" name="last_name" id="lastName" placeholder="山田" required></div>
           <div class="form-group"><label>名</label><input type="text" name="first_name" id="firstName" placeholder="太郎" required></div>
@@ -1360,31 +1360,26 @@
           <label>お問合せ内容 *</label>
           <select name="subject" id="subject" required>
             <option value="" disabled selected>お気軽相談内容はこちら</option>
-            <option value="Zoomでご相談">Zoomでご相談（まず話だけ聞きたい）</option>
+            <option value="Zoomでご相談（まず話だけ聞きたい）">Zoomでご相談（まず話だけ聞きたい）</option>
             <option value="経営支援・デジタル戦略のご相談">経営支援・デジタル戦略のご相談</option>
             <option value="ホームページのご相談">ホームページのご相談</option>
-            <option value="SNS運用などのご相談">SNS運用・LINE活用のご相談</option>
+            <option value="SNS運用・LINE活用のご相談">SNS運用・LINE活用のご相談</option>
             <option value="動画コンテンツ制作のご相談">動画コンテンツ制作のご相談</option>
             <option value="AIチャットボット・アプリ開発のご相談">AIチャットボット・アプリ開発のご相談</option>
             <option value="Web広告のご相談">Web広告のご相談</option>
-            <option value="補助金支援のご相談">補助金支援（IT導入・ものづくり）のご相談</option>
+            <option value="補助金支援（IT導入・ものづくり）のご相談">補助金支援（IT導入・ものづくり）のご相談</option>
           </select>
         </div>
-        <div class="form-group"><label>メッセージ</label><textarea name="message" id="message" placeholder="ご相談内容をお書きください"></textarea></div>
-        <button type="submit" class="btn-submit">入力内容を確認する 🌱</button>
+        <div class="form-group"><label>メッセージ</label><textarea name="message" id="message" rows="5" placeholder="ご相談内容をお書きください"></textarea></div>
+        <button type="submit" class="btn-submit">内容を確認してメールで送る 📩</button>
       </form>
+
       <div id="resultDisplay">
         <div id="successContent">
           <span class="result-icon">✅</span>
-          <h3 class="result-title">送信が完了しました</h3>
-          <p class="result-text">内容を確認の上、担当者より折り返しご連絡いたします。<br>数日経っても返信がない場合は、LINEより再度ご連絡ください。</p>
+          <h3 class="result-title">メールアプリが開きます</h3>
+          <p class="result-text">入力内容がそのまま本文にコピーされた状態でメールアプリが開きます。<br>そのまま送信ボタンを押してください。</p>
           <a href="#" class="btn-back" onclick="location.reload(); return false;">フォームに戻る</a>
-        </div>
-        <div id="errorContent" style="display:none;">
-          <span class="result-icon">⚠️</span>
-          <h3 class="result-title">送信できませんでした</h3>
-          <p class="result-text" id="errorMessage"></p>
-          <a href="#" class="btn-back" onclick="location.reload(); return false;">やり直す</a>
         </div>
       </div>
     </div>
@@ -1399,7 +1394,7 @@
       <div class="confirm-item"><div class="confirm-label">メッセージ</div><div class="confirm-value" id="confirmMessage" style="white-space:pre-wrap;"></div></div>
       <div class="modal-btns">
         <button type="button" class="btn-modal btn-cancel" id="btnCancel">修正する</button>
-        <button type="button" class="btn-modal btn-send" id="btnFinalSend">SPCへ送る</button>
+        <button type="button" class="btn-modal btn-send" id="btnFinalSend">📩 メールアプリで送る</button>
       </div>
     </div>
   </div>
@@ -1434,14 +1429,11 @@
     }, { threshold: 0.15 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+    // お問い合わせフォーム（mailto方式）
     const form = document.getElementById('contactForm');
     const modal = document.getElementById('confirmModal');
-    const resultDisplay = document.getElementById('resultDisplay');
-    const successContent = document.getElementById('successContent');
-    const errorContent = document.getElementById('errorContent');
     const btnCancel = document.getElementById('btnCancel');
     const btnFinalSend = document.getElementById('btnFinalSend');
-    const errorMessageEl = document.getElementById('errorMessage');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -1454,38 +1446,24 @@
 
     btnCancel.addEventListener('click', () => { modal.style.display = 'none'; });
 
-    btnFinalSend.addEventListener('click', async () => {
-      btnFinalSend.disabled = true;
-      btnFinalSend.textContent = '送信中...';
-      const formData = new FormData(form);
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        modal.style.display = 'none';
-        form.style.display = 'none';
-        resultDisplay.style.display = 'block';
-        if (response.ok) {
-          successContent.style.display = 'block';
-          errorContent.style.display = 'none';
-        } else {
-          const data = await response.json();
-          throw new Error(data.error || '送信プロセスで問題が発生しました。');
-        }
-      } catch (error) {
-        modal.style.display = 'none';
-        form.style.display = 'none';
-        resultDisplay.style.display = 'block';
-        successContent.style.display = 'none';
-        errorContent.style.display = 'block';
-        if(error.message.includes('not found') || error.message.includes('fetch')){
-          errorMessageEl.innerHTML = "※テスト送信が失敗する場合、Formspreeのメール認証（初期設定）が完了しているかご確認ください。<br><br>原因: " + error.message;
-        } else {
-          errorMessageEl.innerHTML = `原因: ${error.message}<br>時間をおいて再度お試しいただくか、LINEよりお問い合わせください。`;
-        }
-      }
+    btnFinalSend.addEventListener('click', () => {
+      const name = document.getElementById('lastName').value + ' ' + document.getElementById('firstName').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value || '(なし)';
+
+      const mailSubject = encodeURIComponent('【お問い合わせ】' + subject);
+      const mailBody = encodeURIComponent(
+        'お名前：' + name + '\n' +
+        'メールアドレス：' + email + '\n' +
+        'お問合せ内容：' + subject + '\n\n' +
+        'メッセージ：\n' + message + '\n\n' +
+        '──────────────\n' +
+        'スマイルプラスコンサルティング お問い合わせフォームより'
+      );
+
+      modal.style.display = 'none';
+      window.location.href = 'mailto:spc@smileplusctg.com?subject=' + mailSubject + '&body=' + mailBody;
     });
 
     window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; };
