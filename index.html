@@ -785,6 +785,80 @@
       scroll-margin-top: 80px;
     }
 
+    /* ヒーローニュースリリースバナー */
+    .hero-news {
+      animation: fadeUp 0.8s 0.6s ease both;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero-news-inner {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 16px;
+      padding: 24px 28px;
+      text-align: left;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-news-label {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-news-text {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.9;
+      margin-bottom: 18px;
+      animation: none;
+    }
+
+    .hero-news-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-news-btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      white-space: nowrap;
+    }
+
+    .hero-news-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-zoom {
+      background: var(--gold);
+      color: var(--dark);
+      box-shadow: 0 3px 12px rgba(0,180,200,0.3);
+    }
+
+    .btn-news {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .btn-news:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
     /* スマホ専用改行・PC専用改行 */
     .br-mobile { display: none; }
     .br-pc { display: block; }
@@ -876,6 +950,9 @@
       .hero h1 { font-size: 1.45rem; line-height: 1.75; }
       .hero p { font-size: 0.82rem; line-height: 2; }
       .hero-badge { font-size: 0.72rem; }
+      .hero-news-inner { padding: 18px 20px; }
+      .hero-news-text { font-size: 0.8rem; }
+      .hero-news-btn { font-size: 0.82rem; padding: 10px 22px; }
       .br-mobile { display: block; }
       .br-pc { display: none; }
 
@@ -962,9 +1039,15 @@
       <div class="hero-badge">✨ 中小企業の宝探しをお手伝いします</div>
       <h1>「強みなんてないかも…」<br>そう思ったときこそ、<br><span class="gold">新しい成長のチャンス</span>です</h1>
       <p>AI活用支援・Web制作・SNS運用・動画・広告・音楽制作を通じて、<span class="br-mobile"></span><br class="br-pc">企業さまの"眠っている強み"を一緒に見つけ、<br>未来への成長をサポートします。🌱✨</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">無料Zoom相談を予約する</a>
-        <a href="#services" class="btn-secondary">できることを見る 🌱</a>
+      <div class="hero-news fade-in">
+        <div class="hero-news-inner">
+          <div class="hero-news-label">📢 ニュースリリース</div>
+          <p class="hero-news-text">AI活用をもっと身近に。中小企業や個人事業主の課題解決をサポートする「みっけカタログ」を公開しました✨<br>集客・業務改善・SNS運用・旅行プラン作成など、目的に合わせて活用できるアプリやツールを一覧でご覧いただけます。</p>
+          <div class="hero-news-btns">
+            <a href="https://lin.ee/s9t1ERI" class="hero-news-btn btn-zoom" target="_blank">🎥 無料Zoom相談を予約する</a>
+            <a href="https://mikke-catalog.pages.dev/" class="hero-news-btn btn-news" target="_blank">📢 みっけカタログを見てみる</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
