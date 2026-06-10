@@ -866,19 +866,50 @@
       .nav-links { display: none; }
       .nav-line { display: none; }
       .hamburger { display: flex; }
-      .hero { padding: 100px 28px 60px; }
-      .hero h1 { font-size: 1.55rem; line-height: 1.7; }
-      .hero p { font-size: 0.88rem; line-height: 2; }
+
+      /* 1：ヒーロー本文 */
+      .hero { padding: 100px 24px 60px; }
+      .hero h1 { font-size: 1.45rem; line-height: 1.75; }
+      .hero p { font-size: 0.82rem; line-height: 2; }
       .hero-badge { font-size: 0.72rem; }
+
+      /* 2：バナーサブタイトル */
+      .banners { padding: 60px 24px; }
+      .section-title p { font-size: 0.8rem; }
+
+      /* 3：お悩みセクション */
+      .worries { padding: 60px 24px; }
+      .worry-item { font-size: 0.85rem; padding: 16px 20px; }
+      .worries-list + div p { font-size: 0.9rem !important; }
+
+      /* 4：みっけカタログ */
+      .mikke-catalog-banner { padding: 52px 24px; }
+      .mikke-text h2 { font-size: 1.3rem; line-height: 1.6; }
+      .mikke-text p { font-size: 0.82rem; }
+      .mikke-points li { font-size: 0.82rem; }
+      .mikke-inner { grid-template-columns: 1fr; gap: 32px; }
+      .mikke-visual { display: none; }
+
+      /* 5：伴走の進め方 */
+      .how-we-work { padding: 60px 24px; }
+      .how-we-work .section-title p { font-size: 0.8rem; }
+
+      /* 6：CTAセクション */
+      .cta { padding: 72px 24px; }
+      .cta h2 { font-size: 1.3rem; line-height: 1.7; }
+      .cta p.cta-desc { font-size: 0.88rem; }
+      .cta-bullets { font-size: 0.88rem; line-height: 2; }
+      .cta-btn { font-size: 0.9rem; padding: 15px 32px; }
+      .cta-footer-note { font-size: 0.78rem; }
+
+      /* その他共通 */
+      .section-title h2 { font-size: 1.3rem; }
       .contact-form { padding: 32px 20px; }
       .profile-inner { flex-direction: column; text-align: center; gap: 32px; }
       .stage-grid { grid-template-columns: 1fr; }
       .stage-arrow { display: none; }
       .industry-grid { grid-template-columns: repeat(2, 1fr); }
       .step-row { gap: 20px; }
-      .mikke-inner { grid-template-columns: 1fr; gap: 40px; }
-      .mikke-visual { display: none; }
-      .mikke-catalog-banner { padding: 60px 24px; }
     }
     @media (max-width: 600px) {
       .banner-grid { grid-template-columns: 1fr; }
@@ -924,7 +955,7 @@
     <div class="hero-content">
       <div class="hero-badge">✨ 中小企業の宝探しをお手伝いします</div>
       <h1>「強みなんてないかも…」<br>そう思ったときこそ、<br><span class="gold">新しい成長のチャンス</span>です</h1>
-      <p>Web制作・SNS運用・動画・広告・音楽制作を通じて、<br>企業さまの"眠っている強み"を一緒に見つけ、<br>未来への成長をサポートします。🌱✨</p>
+      <p>Web制作・SNS運用・動画・広告・音楽制作を通じて、企業さまの"眠っている強み"を一緒に見つけ、未来への成長をサポートします。🌱✨</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn-primary">無料Zoom相談を予約する</a>
         <a href="#services" class="btn-secondary">できることを見る 🌱</a>
