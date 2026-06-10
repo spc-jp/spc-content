@@ -1463,7 +1463,13 @@
       );
 
       modal.style.display = 'none';
-      window.location.href = 'mailto:spc@smileplusctg.com?subject=' + mailSubject + '&body=' + mailBody;
+
+      const a = document.createElement('a');
+      a.href = 'mailto:spc@smileplusctg.com?subject=' + mailSubject + '&body=' + mailBody;
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => document.body.removeChild(a), 1000);
     });
 
     window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; };
