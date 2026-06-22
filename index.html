@@ -547,25 +547,69 @@
     .footer-policy a:hover { color: white; }
     .footer-copy { font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
 
-    .line-float {
+    /* 右下固定ボタン */
+    .float-buttons {
       position: fixed;
       bottom: 28px;
       right: 28px;
       z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .float-top {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(26,45,74,0.85);
+      color: white;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateY(10px);
+      backdrop-filter: blur(6px);
+    }
+
+    .float-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .float-top:hover {
+      background: var(--green-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,180,200,0.4);
+    }
+
+    .float-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
       background: #06C755;
       color: white;
-      padding: 14px 24px;
-      border-radius: 40px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.88rem;
-      box-shadow: 0 4px 20px rgba(6,199,85,0.4);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform 0.3s;
+      font-size: 0.65rem;
+      line-height: 1.4;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(6,199,85,0.45);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .line-float:hover { transform: translateY(-4px); }
+
+    .float-line:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(6,199,85,0.55);
+    }
 
     .fade-in { opacity: 0; transform: translateY(24px); transition: 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -1486,9 +1530,23 @@
     <div class="footer-copy">© Smile Plus Consulting. All rights reserved.</div>
   </footer>
 
-  <a href="https://lin.ee/s9t1ERI" class="line-float" target="_blank">🌱 LINEで無料相談</a>
+  <!-- 右下固定ボタン -->
+  <div class="float-buttons">
+    <button class="float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <a href="https://lin.ee/s9t1ERI" class="float-line" target="_blank">🌱 LINE<br>無料相談</a>
+  </div>
 
   <script>
+    // トップへ戻るボタン
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
     // ハンバーガーメニュー
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
