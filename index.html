@@ -157,6 +157,12 @@
       border: 0;
     }
 
+    /* スマホ等で文字が勝手に途中でちぎれて改行されるのを防ぐクラス */
+    .nowrap {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -259,7 +265,7 @@
 
     .hero h1 {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.5rem, 4.5vw, 3.2rem);
+      font-size: clamp(1.6rem, 5vw, 3.2rem);
       font-weight: 700;
       color: white;
       line-height: 1.6;
@@ -1126,7 +1132,8 @@
 
       /* 1：ヒーロー本文 */
       .hero { padding: 100px 24px 60px; }
-      .hero h1 { font-size: 1.45rem; line-height: 1.75; }
+      /* clampでデバイスの横幅(vw)に合わせて文字サイズを限界まで綺麗に縮小させ、はみ出しや不意の改行を防ぐ */
+      .hero h1 { font-size: clamp(1.15rem, 5.8vw, 1.6rem); line-height: 1.75; }
       .hero p { font-size: 0.82rem; line-height: 2; }
       .hero-badge { font-size: 0.72rem; }
       .hero-news-inner { padding: 18px 20px; }
@@ -1219,7 +1226,11 @@
       <p class="hero-intro-text" style="color: var(--gold); font-weight: 700; font-size: clamp(0.95rem, 2.2vw, 1.3rem); letter-spacing: 0.1em; margin-bottom: 16px; font-family: 'Noto Serif JP', serif;">
         Webサイトは「つくる」時代から、お客様の「悩みに答える」時代へ。
       </p>
-      <h1>「うちには強みなんてないかも…」<br>そう思ったときこそ、<br><span class="gold">新しい成長のチャンス</span>です</h1>
+      <h1>
+        <span class="nowrap">「うちには強みなんてないかも…」</span><br>
+        <span class="nowrap">そう思ったときこそ、</span><br>
+        <span class="nowrap"><span class="gold">新しい成長のチャンス</span>です</span>
+      </h1>
       <p>AIから動画、音楽まで。あなたの会社に眠っている「宝（強み）」を一緒に見つけ、<br class="br-pc">一過性ではない、未来への確かな成長に伴走します。🌱✨</p>
       <div class="hero-news fade-in">
         <div class="hero-news-inner">
