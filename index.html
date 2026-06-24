@@ -144,6 +144,19 @@
       overflow-x: hidden;
     }
 
+    /* SEOとアクセシビリティのために裏に文字を残しつつ、画面上からは安全に非表示にするクラス */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -1179,7 +1192,7 @@
       <li><a href="#industries">対応業種</a></li>
       <li><a href="#tools">公式ツール</a></li>
       <li><a href="#profile">私達について</a></li>
-      <li><a href="#contact">お問い合わせ</a></li>
+      <li><a href="#contact">お問合せ</a></li>
     </ul>
     <a href="https://lin.ee/s9t1ERI" class="nav-line" target="_blank">🌱 LINEで相談</a>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
@@ -1195,14 +1208,17 @@
       <li><a href="#industries" class="mobile-nav-link">対応業種</a></li>
       <li><a href="#tools" class="mobile-nav-link">公式ツール</a></li>
       <li><a href="#profile" class="mobile-nav-link">私達について</a></li>
-      <li><a href="#contact" class="mobile-nav-link">お問い合わせ</a></li>
+      <li><a href="#contact" class="mobile-nav-link">お問合せ</a></li>
     </ul>
     <a href="https://lin.ee/s9t1ERI" class="mobile-line" target="_blank">🌱 LINEで無料相談</a>
   </div>
 
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">✨ 埼玉・越谷発｜中小企業の宝探しをお手伝いします</div>
+      <div class="visually-hidden">✨ 埼玉・越谷発｜中小企業の宝探しをお手伝いします</div>
+      <p class="hero-intro-text" style="color: var(--gold); font-weight: 700; font-size: clamp(0.95rem, 2.2vw, 1.3rem); letter-spacing: 0.1em; margin-bottom: 16px; font-family: 'Noto Serif JP', serif;">
+        Webサイトは「つくる」時代から、お客様の「悩みに答える」時代へ。
+      </p>
       <h1>「強みなんてないかも…」<br>そう思ったときこそ、<br><span class="gold">新しい成長のチャンス</span>です</h1>
       <p>AI活用支援・Web制作・SNS運用・動画・広告・音楽制作<span class="br-mobile"></span><br class="br-pc">を通じて、企業さまの"眠っている強み"を一緒に見つけ、<br>未来への成長をサポートします。🌱✨</p>
       <div class="hero-news fade-in">
@@ -1243,7 +1259,7 @@
       <div class="banner-card fade-in">
         <span class="banner-icon">🚀</span>
         <h3>変化のストーリー🌱</h3>
-        <p>小さな気づきや挑戦が、やがて大きな成果につながることがあります。実際のお客様やプロジェクトから生まれた変化のストーリーをご紹介します。</p>
+        <p>小さな気づきや挑戦が、やがて大きな成果につながることがあります。実際のお客様やプロジェクトから生まれた変化 of のストーリーをご紹介します。</p>
       </div>
     </div>
   </section>
@@ -1255,7 +1271,7 @@
     <div class="worries-list">
       <div class="worry-item fade-in"><span class="icon">🤖</span><span>AIが話題だけど、自社では何に使えばいいのかわからない…</span></div>
       <div class="worry-item fade-in"><span class="icon">📋</span><span>業務効率化、集客、採用、顧客対応…どこから始めるのが正解か迷っている…</span></div>
-      <div class="worry-item fade-in"><span class="icon">📉</span><span>ホームページはあるけれど、問い合わせがゼロのまま…</span></div>
+      <div class="worry-item fade-in"><span class="icon">📉</span><span>ホームページはあるけれど、お問合せがゼロのまま…</span></div>
       <div class="worry-item fade-in"><span class="icon">📱</span><span>SNSを始めたけれど、フォロワーが増えず、続ける意味が見えない…</span></div>
       <div class="worry-item fade-in"><span class="icon">🎥</span><span>サービスの強みを伝えたいのに、ただの説明動画になってしまう…</span></div>
       <div class="worry-item fade-in"><span class="icon">💸</span><span>広告を出しても反応が少なく、費用だけが減っていく気がする…</span></div>
@@ -1277,7 +1293,7 @@
         <div class="stage-icon">🌱</div>
         <h3>まず「見える」ようにする</h3>
         <div class="stage-price">LP制作 + LINE連携 + Google登録</div>
-        <p>最小構成のサイトをAI活用で素早く整え、問い合わせが入る状態を一緒につくります。</p>
+        <p>最小構成のサイトをAI活用で素早く整え、お問合せが入る状態を一緒につくります。</p>
         <div class="stage-items">
           <div class="stage-item">✅ AI活用でスピーディに制作</div>
           <div class="stage-item">✅ スマホ最適化・SEO基礎設計</div>
@@ -1361,7 +1377,7 @@
       <div class="industry-card fade-in">
         <div class="industry-icon">📊</div>
         <h3>税理士・士業事務所</h3>
-        <p>顧問先への紹介窓口として機能するサイトと、AIチャットボットで問い合わせ対応を効率化します。</p>
+        <p>顧問先への紹介窓口として機能するサイトと、AIチャットボットでお問合せ対応を効率化します。</p>
         <div class="industry-tags">
           <span class="industry-tag">LP制作</span>
           <span class="industry-tag">AIチャットボット</span>
@@ -1443,7 +1459,7 @@
         <div class="step-content">
           <span class="step-highlight">無料 / オンライン</span>
           <h3>現状ヒアリング（Zoom相談 30分）</h3>
-          <p>ホームページや集客の現状、売上・問い合わせの悩みを気軽にお話しください。フォームやLINEから予約できます。「話すだけでいい」という方も大歓迎です。</p>
+          <p>ホームページや集客の現状、売上・お問合せの悩みを気軽にお話しください。フォームやLINEから予約できます。「話すだけでいい」という方も大歓迎です。</p>
         </div>
       </div>
       <div class="step-row fade-in">
@@ -1508,7 +1524,7 @@
 
   <section class="contact" id="contact">
     <div class="section-title fade-in">
-      <h2>お問い合わせ</h2>
+      <h2>お問合せ</h2>
       <p>気になることがあれば、お気軽にご相談ください。</p>
     </div>
     <div class="contact-form fade-in">
@@ -1522,6 +1538,7 @@
           <label>お問合せ内容 *</label>
           <select name="subject" id="subject" required>
             <option value="" disabled selected>お気軽相談内容はこちら</option>
+            <option value="AI活用、組織化診断のご相談">AI活用、組織化診断のご相談</option>
             <option value="Zoomでご相談（まず話だけ聞きたい）">Zoomでご相談（まず話だけ聞きたい）</option>
             <option value="経営支援・デジタル戦略のご相談">経営支援・デジタル戦略のご相談</option>
             <option value="ホームページのご相談">ホームページのご相談</option>
@@ -1594,7 +1611,7 @@
 
   <footer>
     <div class="footer-logo">スマイルプラスコンサルティング</div>
-    <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);margin-bottom:12px;">埼玉県越谷市｜AI活用支援・Webコンサル・セミナー講師</div>
+    <div class="visually-hidden">埼玉県越谷市｜AI活用支援・Webコンサル・セミナー講師</div>
     <div class="footer-policy"><a href="privacy.html">Privacy Policy</a></div>
     <div class="footer-copy">© Smile Plus Consulting. All rights reserved.</div>
   </footer>
@@ -1666,9 +1683,9 @@
         'お問合せ内容：' + subject + '\n\n' +
         'メッセージ：\n' + message + '\n\n' +
         '──────────────\n' +
-        'スマイルプラスコンサルティング お問い合わせフォームより';
+        'スマイルプラスコンサルティング お問合せフォームより';
 
-      const mailSubject = '【お問い合わせ】' + subject;
+      const mailSubject = '【お問合せ】' + subject;
       const encoded = encodeURIComponent(bodyText);
       const encodedSubject = encodeURIComponent(mailSubject);
 
