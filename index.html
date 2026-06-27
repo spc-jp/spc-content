@@ -324,11 +324,6 @@
 
     .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
-    .banners {
-      padding: 80px 40px;
-      background: var(--light);
-    }
-
     .section-title {
       text-align: center;
       margin-bottom: 48px;
@@ -345,30 +340,6 @@
       color: var(--gray);
       font-size: 0.9rem;
     }
-
-    .banner-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .banner-card {
-      background: white;
-      border-radius: 16px;
-      padding: 24px 20px;
-      color: var(--dark);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      border-left: 4px solid var(--green-light);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .banner-icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
-    .banner-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.05rem; color: var(--green); margin-bottom: 10px; }
-    .banner-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; flex-grow: 1; }
 
     .worries {
       padding: 80px 40px;
@@ -701,6 +672,144 @@
     .fade-in { opacity: 0; transform: translateY(24px); transition: 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* 悩み解決バナーセクション */
+    .solve-worries {
+      padding: 90px 40px;
+      background: linear-gradient(180deg, #f4fafc 0%, #ffffff 100%);
+    }
+
+    .solve-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .solve-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border: 1px solid rgba(0,180,200,0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solve-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #00b4c8, #1a7fa8);
+    }
+
+    .solve-card--center::before {
+      background: linear-gradient(90deg, #1a2d4a, #00b4c8);
+    }
+
+    .solve-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,180,200,0.18);
+    }
+
+    .solve-number {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--green-light);
+    }
+
+    .solve-icon {
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+
+    .solve-tag {
+      display: inline-block;
+      background: var(--green-pale);
+      color: var(--green-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      width: fit-content;
+    }
+
+    .solve-card--center .solve-tag {
+      background: #1a2d4a;
+      color: white;
+    }
+
+    .solve-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      color: var(--dark);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .solve-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .solve-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-grow: 1;
+    }
+
+    .solve-list li {
+      font-size: 0.82rem;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .solve-btn {
+      display: block;
+      text-align: center;
+      background: var(--green-light);
+      color: white;
+      padding: 16px 20px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 4px 20px rgba(0,180,200,0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-top: 4px;
+    }
+
+    .solve-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,180,200,0.5);
+    }
+
+    .solve-btn--soon {
+      background: #1a2d4a;
+      box-shadow: 0 4px 20px rgba(26,45,74,0.3);
+    }
+
+    .solve-btn--soon:hover {
+      box-shadow: 0 8px 28px rgba(26,45,74,0.4);
+    }
+
+    .solve-note {
+      font-size: 0.75rem;
+      color: #aaa;
+      text-align: center;
+    }
 
     /* 3層サービスセクション */
     .three-stage {
@@ -1123,7 +1232,7 @@
     }
 
     /* レスポンシブ */
-    @media (max-width: 1024px) { .banner-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 1024px) { .solve-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       nav { padding: 12px 20px; }
       .nav-links { display: none; }
@@ -1142,8 +1251,12 @@
       .br-mobile { display: block; }
       .br-pc { display: none; }
 
-      /* 2：バナーサブタイトル */
-      .banners { padding: 60px 24px; }
+      /* 2：悩み解決バナー */
+      .solve-worries { padding: 60px 24px; }
+      .solve-grid { grid-template-columns: 1fr; gap: 20px; }
+      .solve-card { padding: 28px 22px; }
+      .solve-title { font-size: 1.05rem; }
+      .solve-btn { font-size: 0.88rem; padding: 14px 16px; }
       .section-title p { font-size: 0.8rem; }
 
       /* 3：お悩みセクション */
@@ -1181,7 +1294,7 @@
       .step-row { gap: 20px; }
     }
     @media (max-width: 600px) {
-      .banner-grid { grid-template-columns: 1fr; }
+      .solve-grid { grid-template-columns: 1fr; }
       .industry-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -1245,36 +1358,6 @@
     </div>
   </section>
 
-  <section class="banners">
-    <div class="section-title fade-in">
-      <h2>SPCからのご案内</h2>
-      <p>企業には、まだ見つかっていない宝物があります。</p>
-      <p style="margin-top:16px;font-size:0.88rem;color:var(--gray);line-height:2;max-width:560px;margin-left:auto;margin-right:auto;">私たちは、その強みや魅力を見つけ、伝わるカタチにするお手伝いをしています🔍✨</p>
-    </div>
-    <div class="banner-grid">
-      <div class="banner-card fade-in">
-        <span class="banner-icon">📌</span>
-        <h3>気づきアップデート🔄</h3>
-        <p>現場で見つけたヒントや学び、Web・SNS・集客・経営に役立つ最新情報を、やさしくわかりやすくお届けします🌱</p>
-      </div>
-      <div class="banner-card fade-in">
-        <span class="banner-icon">🧠</span>
-        <h3>AIはじめの一歩📖</h3>
-        <p>「AIに興味はあるけれど難しそう」そんな方のために、仕事で安心して活用するためのヒントや実践例をご紹介します✨</p>
-      </div>
-      <div class="banner-card fade-in">
-        <span class="banner-icon">💡</span>
-        <h3>強み発見ストーリー🔍</h3>
-        <p>企業やお店には、まだ伝わっていない魅力があります。実際の取り組みや事例を通じて、"眠っている強み"を見つけるヒントをお届けします✨</p>
-      </div>
-      <div class="banner-card fade-in">
-        <span class="banner-icon">🚀</span>
-        <h3>変化のストーリー🌱</h3>
-        <p>小さな気づきや挑戦が、やがて大きな成果につながることがあります。実際のお客様やプロジェクトから生まれた変化 of のストーリーをご紹介します。</p>
-      </div>
-    </div>
-  </section>
-
   <section class="worries">
     <div class="section-title fade-in">
       <h2>こんなお悩みありませんか？</h2>
@@ -1288,8 +1371,66 @@
       <div class="worry-item fade-in"><span class="icon">💸</span><span>広告を出しても反応が少なく、費用だけが減っていく気がする…</span></div>
       <div class="worry-item fade-in"><span class="icon">🔑</span><span>言葉だけでは伝えきれない想いをどう表現すればいいか悩んでいる…</span></div>
     </div>
-    <div style="text-align:center;margin-top:40px;" class="fade-in">
-      <p style="color:var(--green);font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:700;">✨ そんな経営者の悩みに寄り添いながら、<span class="visually-hidden">埼玉・越谷を拠点に</span>AI活用・Web・SNS・動画を組み合わせた「成果につながる仕組みづくり」をサポートしています。</p>
+    <div style="text-align:center;margin-top:48px;" class="fade-in">
+      <p style="color:var(--green);font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:700;line-height:2;">経営者の悩みの裏側には、必ず「まだ見つかっていない宝」があります。<br>その宝を一緒に探すのが、私たちの仕事です。🔍✨</p>
+    </div>
+  </section>
+
+  <section class="solve-worries">
+    <div class="section-title fade-in">
+      <h2>あなたの悩み、その場で解決します</h2>
+      <p>読むだけじゃない。使ってみると、答えが見つかります。</p>
+    </div>
+    <div class="solve-grid">
+
+      <!-- バナー1：SEOみっけ -->
+      <div class="solve-card fade-in">
+        <div class="solve-number">01</div>
+        <div class="solve-icon">📉</div>
+        <div class="solve-tag">ホームページの悩み</div>
+        <h3 class="solve-title">ホームページはあるのに<br>お問合せが来ない…</h3>
+        <p class="solve-desc">URLを入れるだけで、集客の問題点が即わかります。GoogleマップとサイトSEOを自動診断して100点満点でスコア化。「どこが問題か」が一目瞭然です。</p>
+        <ul class="solve-list">
+          <li>✅ Googleマップの登録状況を数値で確認</li>
+          <li>✅ サイトの表示速度・SEOスコアを測定</li>
+          <li>✅ 今すぐできる改善アクションを提案</li>
+        </ul>
+        <a href="https://seo-mikke.pages.dev/" target="_blank" class="solve-btn">🔍 SEOみっけで無料診断する</a>
+        <div class="solve-note">無料・登録不要・その場で結果が出ます</div>
+      </div>
+
+      <!-- バナー2：AI組織化診断 -->
+      <div class="solve-card fade-in solve-card--center">
+        <div class="solve-number">02</div>
+        <div class="solve-icon">🤖</div>
+        <div class="solve-tag">AI活用の悩み</div>
+        <h3 class="solve-title">AIが気になるけど<br>うちの会社で何に使えばいい？</h3>
+        <p class="solve-desc">難しい知識は一切不要。質問に答えるだけで、あなたの会社のAI活用レベルを診断。「今すぐできること」と「90日の行動計画」を自動で提案します。</p>
+        <ul class="solve-list">
+          <li>✅ AI活用レベルをレーダーチャートで可視化</li>
+          <li>✅ 会社の隠れた強み（宝）を発見</li>
+          <li>✅ 90日アクションプランを自動生成</li>
+        </ul>
+        <a href="https://ai-soshikika-shindan.pages.dev/" target="_blank" class="solve-btn">🧠 AI組織化診断を試してみる</a>
+        <div class="solve-note">無料・所要時間5〜10分・診断後に相談もできます</div>
+      </div>
+
+      <!-- バナー3：投稿みっけ（近日公開） -->
+      <div class="solve-card fade-in">
+        <div class="solve-number">03</div>
+        <div class="solve-icon">📱</div>
+        <div class="solve-tag">SNSの悩み</div>
+        <h3 class="solve-title">SNSが続かない<br>投稿ネタが思い浮かばない…</h3>
+        <p class="solve-desc">業種を選んで一言入力するだけで、今日の投稿ネタが30秒で出てきます。「何を書けばいいかわからない」をゼロにする、SNS継続のための専用アプリです。</p>
+        <ul class="solve-list">
+          <li>✅ 業種別・今日使えるネタを即提案</li>
+          <li>✅ キャプション文もそのままコピーOK</li>
+          <li>✅ ネタ切れゼロで投稿が続けられる</li>
+        </ul>
+        <a href="#contact" class="solve-btn solve-btn--soon">📩 公開通知を受け取る（無料）</a>
+        <div class="solve-note">近日公開予定・LINEで先行案内します</div>
+      </div>
+
     </div>
   </section>
 
