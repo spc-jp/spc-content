@@ -613,25 +613,85 @@
     .footer-policy a:hover { color: white; }
     .footer-copy { font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
 
-    .line-float {
+    /* 右下固定ボタン */
+    .float-buttons {
       position: fixed;
       bottom: 28px;
-      right: 28px;
-      z-index: 200;
-      background: #06C755;
-      color: white;
-      padding: 14px 24px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.88rem;
-      box-shadow: 0 4px 20px rgba(6,199,85,0.4);
+      right: 24px;
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .float-top {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #FFE566;
+      color: #0d1b2e;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateY(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .float-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .float-top:hover {
+      background: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .float-line {
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: transform 0.3s;
+      background: #06C755;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 12px 20px;
+      border-radius: 40px;
+      box-shadow: 0 4px 20px rgba(6,199,85,0.45);
+      transition: transform 0.3s, box-shadow 0.3s;
+      white-space: nowrap;
     }
-    .line-float:hover { transform: translateY(-4px); }
+
+    .float-line:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(6,199,85,0.55);
+    }
+
+    .float-line-icon {
+      width: 22px;
+      height: 22px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .float-buttons { bottom: 20px; right: 16px; }
+      .float-line { font-size: 0.78rem; padding: 10px 16px; }
+    }
 
     .fade-in { opacity: 0; transform: translateY(24px); transition: 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -1138,39 +1198,54 @@
       .nav-line { display: none; }
       .hamburger { display: flex; }
 
-      /* 1：ヒーロー本文 */
+      /* ヒーロー */
       .hero { padding: 100px 24px 60px; }
       .hero h1 { font-size: 1.45rem; line-height: 1.75; }
       .hero p { font-size: 0.82rem; line-height: 2; }
       .hero-badge { font-size: 0.72rem; }
       .hero-news-inner { padding: 18px 20px; }
-      .hero-news-text { font-size: 0.8rem; }
-      .hero-news-btn { font-size: 0.82rem; padding: 10px 22px; }
+      .hero-news-text { font-size: 0.68rem; }
+      .hero-news-btn { font-size: 0.76rem; padding: 10px 14px; }
       .br-mobile { display: block; }
       .br-pc { display: none; }
 
-      /* 2：バナーサブタイトル */
-      .banners { padding: 60px 24px; }
-      .section-title p { font-size: 0.8rem; }
-
-      /* 3：お悩みセクション */
+      /* お悩み */
       .worries { padding: 60px 24px; }
       .worry-item { font-size: 0.85rem; padding: 16px 20px; }
-      .worries-list + div p { font-size: 0.9rem !important; }
+      .worries-list + div p { font-size: 0.88rem !important; line-height: 1.9 !important; }
 
-      /* 4：みっけカタログ */
+      /* 3ステージ */
+      .stage-grid { grid-template-columns: 1fr; }
+      .stage-arrow { display: none; }
+      .stage-card { padding: 32px 24px; }
+      .stage-card h3 { font-size: 1.05rem; }
+      .stage-price { font-size: 0.8rem; }
+
+      /* みっけカタログ */
       .mikke-catalog-banner { padding: 52px 24px; }
       .mikke-text h2 { font-size: 1.3rem; line-height: 1.6; }
       .mikke-text p { font-size: 0.82rem; }
       .mikke-points li { font-size: 0.82rem; }
       .mikke-inner { grid-template-columns: 1fr; gap: 32px; }
       .mikke-visual { display: none; }
+      .mikke-btn { font-size: 0.88rem; padding: 14px 28px; }
 
-      /* 5：伴走の進め方 */
+      /* 伴走の進め方 */
       .how-we-work { padding: 60px 24px; }
-      .how-we-work .section-title p { font-size: 0.8rem; }
+      .step-row { gap: 20px; }
+      .step-content h3 { font-size: 1rem; }
+      .step-content p { font-size: 0.85rem; }
 
-      /* 6：CTAセクション */
+      /* FAQ */
+      .faq-section { padding: 60px 24px; }
+      .faq-q { font-size: 0.83rem; padding: 16px 18px; }
+      .faq-a p { font-size: 0.82rem; }
+
+      /* プロフィール */
+      .profile-inner { flex-direction: column; text-align: center; gap: 32px; }
+      .profile-sns { justify-content: center; }
+
+      /* CTA */
       .cta { padding: 72px 24px; }
       .cta h2 { font-size: 1.3rem; line-height: 1.7; }
       .cta p.cta-desc { font-size: 0.88rem; }
@@ -1178,14 +1253,11 @@
       .cta-btn { font-size: 0.9rem; padding: 15px 32px; }
       .cta-footer-note { font-size: 0.78rem; }
 
-      /* その他共通 */
+      /* 共通 */
       .section-title h2 { font-size: 1.3rem; }
-      .contact-form { padding: 32px 20px; }
-      .profile-inner { flex-direction: column; text-align: center; gap: 32px; }
-      .stage-grid { grid-template-columns: 1fr; }
-      .stage-arrow { display: none; }
+      .section-title p { font-size: 0.8rem; }
       .industry-grid { grid-template-columns: repeat(2, 1fr); }
-      .step-row { gap: 20px; }
+      .contact-form { padding: 32px 20px; }
     }
     @media (max-width: 600px) {
       .banner-grid { grid-template-columns: 1fr; }
@@ -1247,36 +1319,6 @@
     </div>
   </section>
 
-  <section class="banners">
-    <div class="section-title fade-in">
-      <h2>SPCからのご案内</h2>
-      <p>企業には、まだ見つかっていない宝物があります。</p>
-      <p style="margin-top:16px;font-size:0.88rem;color:var(--gray);line-height:2;max-width:560px;margin-left:auto;margin-right:auto;">私たちは、その強みや魅力を見つけ、伝わるカタチにするお手伝いをしています🔍✨</p>
-    </div>
-    <div class="banner-grid">
-      <div class="banner-card fade-in">
-        <span class="banner-icon">📌</span>
-        <h3>気づきアップデート🔄</h3>
-        <p>現場で見つけたヒントや学び、Web・SNS・集客・経営に役立つ最新情報を、やさしくわかりやすくお届けします🌱</p>
-      </div>
-      <div class="banner-card fade-in">
-        <span class="banner-icon">🧠</span>
-        <h3>AIはじめの一歩📖</h3>
-        <p>「AIに興味はあるけれど難しそう」そんな方のために、仕事で安心して活用するためのヒントや実践例をご紹介します✨</p>
-      </div>
-      <div class="banner-card fade-in">
-        <span class="banner-icon">💡</span>
-        <h3>強み発見ストーリー🔍</h3>
-        <p>企業やお店には、まだ伝わっていない魅力があります。実際の取り組みや事例を通じて、"眠っている強み"を見つけるヒントをお届けします✨</p>
-      </div>
-      <div class="banner-card fade-in">
-        <span class="banner-icon">🚀</span>
-        <h3>変化のストーリー🌱</h3>
-        <p>小さな気づきや挑戦が、やがて大きな成果につながることがあります。実際のお客様やプロジェクトから生まれた変化のストーリーをご紹介します。</p>
-      </div>
-    </div>
-  </section>
-
   <section class="worries">
     <div class="section-title fade-in">
       <h2>こんなお悩みありませんか？</h2>
@@ -1291,7 +1333,7 @@
       <div class="worry-item fade-in"><span class="icon">💭</span><span>言葉だけでは伝えきれない想いをどう表現すればいいか悩んでいる…</span></div>
     </div>
     <div style="text-align:center;margin-top:40px;" class="fade-in">
-      <p style="color:var(--green);font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:700;">✨ そんな経営者の悩みに寄り添いながら、AI・Web・SNS・動画を組み合わせた「成果につながる仕組みづくり」をサポートしています。</p>
+      <p style="color:var(--green);font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:700;">✨ そんな経営者の悩みに寄り添いながら、<br>AI・Web・SNS・動画を組み合わせた<br>「成果につながる仕組みづくり」をサポートしています。</p>
     </div>
   </section>
 
@@ -1304,7 +1346,7 @@
       <div class="stage-card fade-in">
         <span class="stage-label">STAGE 1 ／ 入口</span>
         <div class="stage-icon">🌱</div>
-        <h3>まず「見える」ようにする</h3>
+        <h3>まず「見える」<br>ようにする</h3>
         <div class="stage-price">LP制作 + LINE連携 + Google登録</div>
         <p>最小構成のサイトをAI活用で素早く整え、問い合わせが入る状態を一緒につくります。</p>
         <div class="stage-items">
@@ -1317,7 +1359,7 @@
       <div class="stage-card fade-in">
         <span class="stage-label">STAGE 2 ／ 継続</span>
         <div class="stage-icon">🔄</div>
-        <h3>「続ける仕組み」を育てる</h3>
+        <h3>「続ける仕組み」<br>を育てる</h3>
         <div class="stage-price">月額 継続サポート</div>
         <p>SNS運用・LINE配信・月次レポートなど、売上に直結する発信を継続的にサポートします。</p>
         <div class="stage-items">
@@ -1330,7 +1372,7 @@
       <div class="stage-card fade-in">
         <span class="stage-label">STAGE 3 ／ 高単価</span>
         <div class="stage-icon">🚀</div>
-        <h3>「経営の武器」をつくる</h3>
+        <h3>「経営の武器」<br>をつくる</h3>
         <div class="stage-price">AIチャットボット・補助金・EC構築</div>
         <p>AIチャットボット設計・補助金申請支援・採用戦略など、上流から経営を支援します。</p>
         <div class="stage-items">
@@ -1594,21 +1636,6 @@
   </section>
 
   <!-- CTAセクション -->
-    <h2 class="fade-in">ここから"あなたの宝探し"が始まります</h2>
-    <p class="cta-desc fade-in">
-      あなたは、本当に大切な「経営」と「お客様」に集中してください。<br>
-      まずは一歩。小さな相談からでも、未来は大きく変わります。
-    </p>
-    <div class="cta-bullets fade-in">
-      ▶面倒なフォーム入力は不要<br>
-      ▶LINEで「希望日時」を送るだけで予約完了！
-    </div>
-    <a href="https://lin.ee/s9t1ERI" class="cta-btn fade-in" target="_blank">🌱 無料Zoom相談をLINEで予約する</a>
-    <p class="cta-footer-note fade-in">
-      「とりあえず話だけ聞いてみたい」「AIやWebの活用について相談したい」そんな方も大歓迎です。
-    </p>
-  </section>
-
   <section class="profile" id="profile">
     <div class="profile-inner">
       <div class="profile-text fade-in">
@@ -1624,6 +1651,22 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="cta">
+    <h2 class="fade-in">ここから"あなたの宝探し"が始まります</h2>
+    <p class="cta-desc fade-in">
+      あなたは、本当に大切な「経営」と「お客様」に集中してください。<br>
+      まずは一歩。小さな相談からでも、未来は大きく変わります。
+    </p>
+    <div class="cta-bullets fade-in">
+      ▶面倒なフォーム入力は不要<br>
+      ▶LINEで「希望日時」を送るだけで予約完了！
+    </div>
+    <a href="https://lin.ee/s9t1ERI" class="cta-btn fade-in" target="_blank">🌱 無料Zoom相談をLINEで予約する</a>
+    <p class="cta-footer-note fade-in">
+      「とりあえず話だけ聞いてみたい」「AIやWebの活用について相談したい」そんな方も大歓迎です。
+    </p>
   </section>
 
   <section class="contact" id="contact">
@@ -1718,9 +1761,29 @@
     <div class="footer-copy">© Smile Plus Consulting. All rights reserved.</div>
   </footer>
 
-  <a href="https://lin.ee/s9t1ERI" class="line-float" target="_blank">🌱 LINEで無料相談</a>
+  <!-- 右下固定ボタン -->
+  <div class="float-buttons">
+    <button class="float-top" id="backToTop" aria-label="トップへ戻る">↑</button>
+    <a href="https://lin.ee/s9t1ERI" class="float-line" target="_blank">
+      <span class="float-line-icon">🌱</span>
+      LINEで相談
+    </a>
+  </div>
 
   <script>
+    // トップへ戻るボタン
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     // FAQアコーディオン
     function toggleFaq(btn) {
       const answer = btn.nextElementSibling;
