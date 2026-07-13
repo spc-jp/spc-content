@@ -655,16 +655,49 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.25);
     }
 
+    .float-contact {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #1a2d4a;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 10px 16px;
+      border-radius: 40px;
+      box-shadow: 0 4px 20px rgba(26,45,74,0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+      white-space: nowrap;
+    }
+
+    .float-contact:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(26,45,74,0.45);
+    }
+
+    .float-contact-icon {
+      width: 22px;
+      height: 22px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
     .float-line {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       background: #06C755;
       color: white;
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.82rem;
-      padding: 12px 20px;
+      font-size: 0.75rem;
+      padding: 10px 16px;
       border-radius: 40px;
       box-shadow: 0 4px 20px rgba(6,199,85,0.45);
       transition: transform 0.3s, box-shadow 0.3s;
@@ -1764,6 +1797,10 @@
   <!-- 右下固定ボタン -->
   <div class="float-buttons">
     <button class="float-top" id="backToTop" aria-label="トップへ戻る">↑</button>
+    <a href="#contact" class="float-contact">
+      <span class="float-contact-icon">✉️</span>
+      お問合せはこちら
+    </a>
     <a href="https://lin.ee/s9t1ERI" class="float-line" target="_blank">
       <span class="float-line-icon">🌱</span>
       LINEで相談
