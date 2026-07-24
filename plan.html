@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支援プラン｜スマイルプラスコンサルティング</title>
+  <meta name="description" content="スマイルプラスコンサルティングの3ステージ支援プラン。STAGE1：見える化、STAGE2：継続サポート、STAGE3：経営の武器化まで、状況に合わせて伴走します。">
+  <link rel="canonical" href="https://www.smileplusctg.com/plan.html">
+  <link rel="icon" type="image/png" href="https://www.smileplusctg.com/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --green: #1a2d4a; --green-light: #00b4c8; --green-pale: #e6f7fa; --gold: #00b4c8; --dark: #1a2d4a; --gray: #666; --light: #f4fafc; --white: #ffffff; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--white); color: var(--dark); line-height: 1.8; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,180,200,0.15); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 48px; width: auto; }
+    .logo-fallback { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; color: var(--green); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--green-light); }
+    .nav-line { background: #06C755; color: white; padding: 8px 14px; border-radius: 24px; text-decoration: none; font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+    .breadcrumb { padding: 100px 40px 20px; background: var(--light); font-size: 0.8rem; color: var(--gray); }
+    .breadcrumb a { color: var(--green-light); text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+    .page-hero { background: linear-gradient(135deg, #0d1b2e 0%, #1a2d4a 60%, #00b4c8 100%); padding: 60px 40px; text-align: center; color: white; }
+    .page-hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 12px; }
+    .page-hero p { font-size: 0.95rem; opacity: 0.85; }
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .section-title h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--green); margin-bottom: 12px; }
+    .section-title p { color: var(--gray); font-size: 0.9rem; }
+    .three-stage { padding: 80px 40px; background: var(--white); }
+    .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+    .stage-card { padding: 40px 32px; position: relative; display: flex; flex-direction: column; }
+    .stage-card:nth-child(1) { background: var(--green-pale); border-right: 1px solid rgba(0,180,200,0.2); }
+    .stage-card:nth-child(2) { background: #1a2d4a; color: white; }
+    .stage-card:nth-child(3) { background: var(--green-light); color: white; }
+    .stage-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; padding: 4px 14px; border-radius: 20px; margin-bottom: 20px; }
+    .stage-card:nth-child(1) .stage-label { background: var(--green-light); color: white; }
+    .stage-card:nth-child(2) .stage-label { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+    .stage-card:nth-child(3) .stage-label { background: rgba(255,255,255,0.2); color: white; }
+    .stage-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .stage-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; margin-bottom: 12px; }
+    .stage-card:nth-child(1) h3 { color: var(--green); }
+    .stage-price { font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; opacity: 0.85; }
+    .stage-card p { font-size: 0.85rem; line-height: 1.8; flex-grow: 1; }
+    .stage-card:nth-child(1) p { color: var(--gray); }
+    .stage-items { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .stage-item { font-size: 0.82rem; display: flex; align-items: flex-start; gap: 8px; opacity: 0.9; }
+    .stage-card:nth-child(1) .stage-item { color: var(--dark); }
+    .stage-arrow { display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--green-light); position: absolute; right: -18px; top: 50%; transform: translateY(-50%); z-index: 2; background: white; border-radius: 50%; width: 36px; height: 36px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .steps-section { padding: 80px 40px; background: var(--light); }
+    .steps-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+    .step-row { display: flex; align-items: flex-start; gap: 32px; position: relative; }
+    .step-row:not(:last-child)::after { content: ''; position: absolute; left: 31px; top: 64px; width: 2px; height: calc(100% + 0px); background: linear-gradient(to bottom, var(--green-light), var(--green-pale)); }
+    .step-number { flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; background: var(--green); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif JP', serif; font-size: 1.3rem; font-weight: 700; position: relative; z-index: 1; }
+    .step-content { padding: 12px 0 48px; }
+    .step-content h3 { font-family: 'Noto Serif JP', serif; font-size: 1.15rem; color: var(--green); margin-bottom: 8px; }
+    .step-content p { font-size: 0.9rem; color: var(--gray); line-height: 1.8; max-width: 600px; }
+    .step-highlight { display: inline-block; background: var(--green-pale); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 3px 12px; border-radius: 12px; margin-bottom: 8px; }
+    .cta { padding: 80px 40px; background: linear-gradient(135deg, #00b4c8, #1a2d4a); text-align: center; color: white; }
+    .cta h2 { font-family: 'Noto Serif JP', serif; font-size: 1.8rem; margin-bottom: 20px; }
+    .cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 32px; }
+    .cta-btn { display: inline-block; background: #00b4c8; color: #0d1b2e; padding: 16px 40px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
+    .cta-btn:hover { transform: translateY(-3px); }
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 48px 40px 32px; text-align: center; }
+    .footer-logo { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; color: white; margin-bottom: 8px; }
+    .footer-policy { margin-bottom: 16px; }
+    .footer-policy a { color: rgba(255,255,255,0.6); font-size: 0.75rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,180,200,0.15); z-index: 999; padding: 20px 0 28px; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; }
+    .mobile-menu ul li a { display: block; padding: 14px 32px; font-size: 0.95rem; color: var(--dark); text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(0,180,200,0.08); }
+    .mobile-menu .mobile-line { display: block; margin: 20px 32px 0; background: #06C755; color: white; text-align: center; padding: 14px; border-radius: 30px; font-weight: 700; font-size: 0.92rem; text-decoration: none; }
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .nav-line { display: none; }
+      .hamburger { display: flex; }
+      .breadcrumb { padding: 80px 24px 20px; }
+      .page-hero { padding: 40px 24px; }
+      .three-stage { padding: 60px 24px; }
+      .stage-grid { grid-template-columns: 1fr; }
+      .stage-arrow { display: none; }
+      .steps-section { padding: 60px 24px; }
+      .step-row { gap: 20px; }
+      .cta { padding: 60px 24px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "トップ", "item": "https://www.smileplusctg.com/" },
+    { "@type": "ListItem", "position": 2, "name": "支援プラン", "item": "https://www.smileplusctg.com/plan.html" }
+  ]}
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="rogo.png" alt="スマイルプラスコンサルティング" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <span class="logo-fallback" style="display:none;">SPC</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="profile.html">私達について</a></li>
+      <li><a href="plan.html">支援プラン</a></li>
+      <li><a href="services.html">できること</a></li>
+      <li><a href="tools.html">公式ツール</a></li>
+      <li><a href="faq.html">よくあるご質問</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="nav-line" target="_blank">🌱 LINEで相談</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="profile.html" class="mobile-nav-link">私達について</a></li>
+      <li><a href="plan.html" class="mobile-nav-link">支援プラン</a></li>
+      <li><a href="services.html" class="mobile-nav-link">できること</a></li>
+      <li><a href="tools.html" class="mobile-nav-link">公式ツール</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">よくあるご質問</a></li>
+      <li><a href="index.html#contact" class="mobile-nav-link">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="mobile-line" target="_blank">🌱 LINEで無料相談</a>
+  </div>
+  <div class="breadcrumb"><a href="index.html">トップ</a><span>›</span>支援プラン</div>
+  <div class="page-hero">
+    <h1>支援プラン</h1>
+    <p>まずは気軽な一歩から。状況に合わせて、一緒に次のステージへ進めます。</p>
+  </div>
+  <section class="three-stage">
+    <div class="section-title fade-in"><h2>3つのステージで伴走します</h2><p>小さく始めて、着実に成長する。SPCの支援スタイルです。</p></div>
+    <div class="stage-grid">
+      <div class="stage-card fade-in">
+        <span class="stage-label">STAGE 1 ／ 入口</span>
+        <div class="stage-icon">🌱</div>
+        <h3>まず「見える」<br>ようにする</h3>
+        <div class="stage-price">LP制作 + LINE連携 + Google登録</div>
+        <p>最小構成のサイトをAI活用で素早く整え、問い合わせが入る状態を一緒につくります。</p>
+        <div class="stage-items">
+          <div class="stage-item">✅ AI活用でスピーディに制作</div>
+          <div class="stage-item">✅ スマホ最適化・SEO基礎設計</div>
+          <div class="stage-item">✅ 公式LINE・Googleビジネス連携</div>
+        </div>
+        <div class="stage-arrow">›</div>
+      </div>
+      <div class="stage-card fade-in">
+        <span class="stage-label">STAGE 2 ／ 継続</span>
+        <div class="stage-icon">🔄</div>
+        <h3>「続ける仕組み」<br>を育てる</h3>
+        <div class="stage-price">月額 継続サポート</div>
+        <p>SNS運用・LINE配信・月次レポートなど、売上に直結する発信を継続的にサポートします。</p>
+        <div class="stage-items">
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ SNS・LINE定期配信設計</div>
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ Googleアナリティクス月次確認</div>
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ MEO対策・口コミ管理支援</div>
+        </div>
+        <div class="stage-arrow" style="background:var(--green);color:white;">›</div>
+      </div>
+      <div class="stage-card fade-in">
+        <span class="stage-label">STAGE 3 ／ 高単価</span>
+        <div class="stage-icon">🚀</div>
+        <h3>「経営の武器」<br>をつくる</h3>
+        <div class="stage-price">AIチャットボット・補助金・EC構築</div>
+        <p>AIチャットボット設計・補助金申請支援・採用戦略など、上流から経営を支援します。</p>
+        <div class="stage-items">
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ DifyによるAIチャットボット設計</div>
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ IT導入・ものづくり補助金支援</div>
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ 採用ページ・EC構築戦略</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="steps-section">
+    <div class="section-title fade-in"><h2>伴走の進め方</h2><p>「まず相談」から始めて、一緒に一歩ずつ進めます。</p></div>
+    <div class="steps-container">
+      <div class="step-row fade-in"><div class="step-number">1</div><div class="step-content"><span class="step-highlight">無料 / オンライン</span><h3>現状ヒアリング（Zoom相談 30分）</h3><p>ホームページや集客の現状、売上・問い合わせの悩みを気軽にお話しください。</p></div></div>
+      <div class="step-row fade-in"><div class="step-number">2</div><div class="step-content"><span class="step-highlight">1〜2週間</span><h3>課題整理 ＋ 提案書をお渡し</h3><p>ヒアリング内容をもとに「今すぐできること」「中長期でやること」を整理してお渡しします。</p></div></div>
+      <div class="step-row fade-in"><div class="step-number">3</div><div class="step-content"><span class="step-highlight">最短2〜4週間で公開</span><h3>入口商品からスタート</h3><p>まずは小さく始めます。LP1枚＋LINE連携など、シンプルな構成でスピード公開。</p></div></div>
+      <div class="step-row fade-in"><div class="step-number">4</div><div class="step-content"><span class="step-highlight">月次確認・改善</span><h3>継続サポートで育てていく</h3><p>公開後も数値を見ながら一緒に改善します。3ヶ月・6ヶ月で成果が出る体制をつくっていきます。</p></div></div>
+    </div>
+  </section>
+  <section class="cta">
+    <h2>まずは無料相談から</h2>
+    <p>「話を聞くだけでもOK」そんな方も大歓迎です。</p>
+    <a href="https://lin.ee/s9t1ERI" class="cta-btn" target="_blank">🌱 無料Zoom相談をLINEで予約する</a>
+  </section>
+  <footer>
+    <div class="footer-logo">スマイルプラスコンサルティング</div>
+    <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);margin-bottom:12px;">埼玉県越谷市｜AI活用支援・Webコンサル・セミナー講師</div>
+    <div class="footer-policy"><a href="privacy.html">Privacy Policy</a></div>
+    <div class="footer-copy">© Smile Plus Consulting. All rights reserved.</div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
+  </script>
+</body>
+</html>

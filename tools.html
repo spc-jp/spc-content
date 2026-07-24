@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公式ツール｜スマイルプラスコンサルティング</title>
+  <meta name="description" content="スマイルプラスコンサルティングが開発した中小企業向けAIアプリ60本以上をまとめた「みっけカタログ」。集客・業務改善・SNS運用など目的別に活用できます。">
+  <link rel="canonical" href="https://www.smileplusctg.com/tools.html">
+  <link rel="icon" type="image/png" href="https://www.smileplusctg.com/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --green: #1a2d4a; --green-light: #00b4c8; --green-pale: #e6f7fa; --dark: #1a2d4a; --gray: #666; --light: #f4fafc; --white: #ffffff; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--white); color: var(--dark); line-height: 1.8; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,180,200,0.15); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 48px; width: auto; }
+    .logo-fallback { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; color: var(--green); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--green-light); }
+    .nav-line { background: #06C755; color: white; padding: 8px 14px; border-radius: 24px; text-decoration: none; font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+    .breadcrumb { padding: 100px 40px 20px; background: var(--light); font-size: 0.8rem; color: var(--gray); }
+    .breadcrumb a { color: var(--green-light); text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+    .page-hero { background: linear-gradient(135deg, #0d1b2e 0%, #1a2d4a 60%, #00b4c8 100%); padding: 60px 40px; text-align: center; color: white; }
+    .page-hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 12px; }
+    .page-hero p { font-size: 0.95rem; opacity: 0.85; }
+    .mikke-section { padding: 80px 40px; background: linear-gradient(135deg, #0d1b2e 0%, #1a2d4a 60%, #0e3a4a 100%); position: relative; overflow: hidden; }
+    .mikke-section::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b4c8' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .mikke-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: center; position: relative; z-index: 1; }
+    .mikke-badge { display: inline-block; background: rgba(0,180,200,0.2); border: 1px solid rgba(0,180,200,0.5); color: #00b4c8; padding: 5px 18px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 20px; }
+    .mikke-text h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem, 3vw, 2rem); color: white; margin-bottom: 20px; line-height: 1.5; }
+    .mikke-text p { font-size: 0.92rem; color: rgba(255,255,255,0.78); line-height: 1.9; margin-bottom: 24px; }
+    .mikke-points { list-style: none; margin-bottom: 36px; display: flex; flex-direction: column; gap: 10px; }
+    .mikke-points li { font-size: 0.88rem; color: rgba(255,255,255,0.9); }
+    .mikke-btn { display: inline-block; background: #00b4c8; color: #0d1b2e; padding: 16px 40px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 24px rgba(0,180,200,0.4); transition: transform 0.3s; }
+    .mikke-btn:hover { transform: translateY(-3px); }
+    .mikke-visual { display: flex; justify-content: center; align-items: center; }
+    .mikke-card-stack { position: relative; width: 280px; height: 280px; }
+    .mikke-card { position: absolute; background: rgba(255,255,255,0.07); border: 1px solid rgba(0,180,200,0.25); border-radius: 14px; padding: 14px 20px; font-size: 0.85rem; color: rgba(255,255,255,0.9); font-weight: 700; backdrop-filter: blur(6px); white-space: nowrap; }
+    .mc1 { top: 0; left: 0; transform: rotate(-4deg); }
+    .mc2 { top: 48px; left: 40px; transform: rotate(2deg); background: rgba(0,180,200,0.12); }
+    .mc3 { top: 100px; left: 10px; transform: rotate(-2deg); }
+    .mc4 { top: 152px; left: 48px; transform: rotate(3deg); background: rgba(0,180,200,0.1); }
+    .mikke-count { position: absolute; bottom: 0; right: 0; background: #00b4c8; color: #0d1b2e; border-radius: 50%; width: 100px; height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Noto Serif JP', serif; font-size: 2rem; font-weight: 700; line-height: 1; box-shadow: 0 4px 20px rgba(0,180,200,0.4); }
+    .mikke-count span { font-size: 0.6rem; font-weight: 700; margin-top: 4px; }
+    .features { padding: 80px 40px; background: var(--light); }
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .section-title h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--green); margin-bottom: 12px; }
+    .section-title p { color: var(--gray); font-size: 0.9rem; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .feature-card { background: white; border-radius: 16px; padding: 32px 24px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .feature-icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .feature-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.05rem; color: var(--green); margin-bottom: 12px; }
+    .feature-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.8; }
+    .cta { padding: 80px 40px; background: linear-gradient(135deg, #00b4c8, #1a2d4a); text-align: center; color: white; }
+    .cta h2 { font-family: 'Noto Serif JP', serif; font-size: 1.8rem; margin-bottom: 20px; }
+    .cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 32px; }
+    .cta-btn { display: inline-block; background: #00b4c8; color: #0d1b2e; padding: 16px 40px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: transform 0.3s; margin-right: 12px; margin-bottom: 12px; }
+    .cta-btn:hover { transform: translateY(-3px); }
+    .cta-btn-sub { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 16px 40px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: background 0.3s; margin-bottom: 12px; }
+    .cta-btn-sub:hover { background: rgba(255,255,255,0.25); }
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 48px 40px 32px; text-align: center; }
+    .footer-logo { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; color: white; margin-bottom: 8px; }
+    .footer-policy { margin-bottom: 16px; }
+    .footer-policy a { color: rgba(255,255,255,0.6); font-size: 0.75rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,180,200,0.15); z-index: 999; padding: 20px 0 28px; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; }
+    .mobile-menu ul li a { display: block; padding: 14px 32px; font-size: 0.95rem; color: var(--dark); text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(0,180,200,0.08); }
+    .mobile-menu .mobile-line { display: block; margin: 20px 32px 0; background: #06C755; color: white; text-align: center; padding: 14px; border-radius: 30px; font-weight: 700; font-size: 0.92rem; text-decoration: none; }
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; } .nav-links { display: none; } .nav-line { display: none; } .hamburger { display: flex; }
+      .breadcrumb { padding: 80px 24px 20px; } .page-hero { padding: 40px 24px; }
+      .mikke-section { padding: 52px 24px; } .mikke-inner { grid-template-columns: 1fr; gap: 32px; } .mikke-visual { display: none; }
+      .features { padding: 60px 24px; } .feature-grid { grid-template-columns: 1fr; } .cta { padding: 60px 24px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "トップ", "item": "https://www.smileplusctg.com/" },
+    { "@type": "ListItem", "position": 2, "name": "公式ツール", "item": "https://www.smileplusctg.com/tools.html" }
+  ]}
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="rogo.png" alt="スマイルプラスコンサルティング" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <span class="logo-fallback" style="display:none;">SPC</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="profile.html">私達について</a></li>
+      <li><a href="plan.html">支援プラン</a></li>
+      <li><a href="services.html">できること</a></li>
+      <li><a href="tools.html">公式ツール</a></li>
+      <li><a href="faq.html">よくあるご質問</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="nav-line" target="_blank">🌱 LINEで相談</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="profile.html" class="mobile-nav-link">私達について</a></li>
+      <li><a href="plan.html" class="mobile-nav-link">支援プラン</a></li>
+      <li><a href="services.html" class="mobile-nav-link">できること</a></li>
+      <li><a href="tools.html" class="mobile-nav-link">公式ツール</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">よくあるご質問</a></li>
+      <li><a href="index.html#contact" class="mobile-nav-link">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="mobile-line" target="_blank">🌱 LINEで無料相談</a>
+  </div>
+  <div class="breadcrumb"><a href="index.html">トップ</a><span>›</span>公式ツール</div>
+  <div class="page-hero">
+    <h1>公式ツール</h1>
+    <p>SPCが開発した中小企業向けAIアプリを、まず試してみてください。</p>
+  </div>
+  <section class="mikke-section">
+    <div class="mikke-inner fade-in">
+      <div class="mikke-text">
+        <div class="mikke-badge">🗂 SPC公式ツール｜みっけカタログ</div>
+        <h2>AIアプリを、まず試してみてください</h2>
+        <p>SPCが開発した中小企業向けAIアプリを60本以上まとめた総合カタログです。<br>無料で体験できるものも多数。「使える！」と感じたらそのままプロ版へ。<br>購入は1クリックで完結します。</p>
+        <ul class="mikke-points">
+          <li>✅ 税理士・士業・製造業・飲食業など業種別に探せる</li>
+          <li>✅ 無料お試し機能つき、まず触ってから判断できる</li>
+          <li>✅ 買い切り・月額など用途に合わせて選べる</li>
+        </ul>
+        <a href="https://mikke-catalog.pages.dev/" class="mikke-btn" target="_blank">🌱 みっけカタログを見てみる →</a>
+      </div>
+      <div class="mikke-visual">
+        <div class="mikke-card-stack">
+          <div class="mikke-card mc1">📊 SEOみっけ</div>
+          <div class="mikke-card mc2">🔍 経験みっけ</div>
+          <div class="mikke-card mc3">🤖 匿名化くん</div>
+          <div class="mikke-card mc4">📝 書面チェックくん</div>
+          <div class="mikke-count">60<span>以上のAIアプリ</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="features">
+    <div class="section-title fade-in"><h2>みっけカタログの特徴</h2><p>中小企業・個人事業主のために設計されたAIアプリ集です。</p></div>
+    <div class="feature-grid">
+      <div class="feature-card fade-in"><div class="feature-icon">🆓</div><h3>まず無料で試せる</h3><p>多くのアプリに無料体験機能があります。使ってみて、納得してから購入できます。</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon">🏭</div><h3>業種別に探せる</h3><p>税理士・製造業・飲食業・美容業など、業種に合ったアプリをすぐに見つけられます。</p></div>
+      <div class="feature-card fade-in"><div class="feature-icon">💳</div><h3>1クリックで購入</h3><p>買い切り・月額サブスクなど用途に合わせて選択。Stripeで安全に決済できます。</p></div>
+    </div>
+  </section>
+  <section class="cta">
+    <h2>まずカタログを見てみましょう</h2>
+    <p>60本以上のAIアプリから、あなたに合うものを見つけてください。</p>
+    <a href="https://mikke-catalog.pages.dev/" class="cta-btn" target="_blank">🌱 みっけカタログを見てみる</a>
+    <a href="https://lin.ee/s9t1ERI" class="cta-btn-sub" target="_blank">📩 LINEで相談する</a>
+  </section>
+  <footer>
+    <div class="footer-logo">スマイルプラスコンサルティング</div>
+    <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);margin-bottom:12px;">埼玉県越谷市｜AI活用支援・Webコンサル・セミナー講師</div>
+    <div class="footer-policy"><a href="privacy.html">Privacy Policy</a></div>
+    <div class="footer-copy">© Smile Plus Consulting. All rights reserved.</div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
+  </script>
+</body>
+</html>

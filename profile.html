@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私達について｜スマイルプラスコンサルティング</title>
+  <meta name="description" content="スマイルプラスコンサルティングの代表・松本由也（YoshiBon）のプロフィール。埼玉・越谷を拠点に中小企業のAI活用・Webコンサル・セミナー講師として活動しています。">
+  <link rel="canonical" href="https://www.smileplusctg.com/profile.html">
+  <link rel="icon" type="image/png" href="https://www.smileplusctg.com/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="私達について｜スマイルプラスコンサルティング">
+  <meta property="og:description" content="代表・松本由也（YoshiBon）のプロフィール。AI活用・Webコンサル・セミナー講師として中小企業を支援しています。">
+  <meta property="og:url" content="https://www.smileplusctg.com/profile.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1a2d4a;
+      --green-light: #00b4c8;
+      --green-pale: #e6f7fa;
+      --gold: #00b4c8;
+      --dark: #1a2d4a;
+      --gray: #666;
+      --light: #f4fafc;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--white); color: var(--dark); line-height: 1.8; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,180,200,0.15);
+      padding: 14px 40px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 48px; width: auto; }
+    .logo-fallback { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; color: var(--green); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--green-light); }
+    .nav-line { background: #06C755; color: white; padding: 8px 14px; border-radius: 24px; text-decoration: none; font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+
+    /* パンくずリスト */
+    .breadcrumb {
+      padding: 100px 40px 20px;
+      background: var(--light);
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+    .breadcrumb a { color: var(--green-light); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* ページヒーロー */
+    .page-hero {
+      background: linear-gradient(135deg, #0d1b2e 0%, #1a2d4a 60%, #00b4c8 100%);
+      padding: 60px 40px;
+      text-align: center;
+      color: white;
+    }
+    .page-hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 12px; }
+    .page-hero p { font-size: 0.95rem; opacity: 0.85; }
+
+    /* プロフィール */
+    .profile { padding: 80px 40px; background: var(--white); }
+    .profile-inner { max-width: 800px; margin: 0 auto; }
+    .profile-text h2 { font-family: 'Noto Serif JP', serif; font-size: 1.8rem; color: var(--green); margin-bottom: 8px; }
+    .profile-text .name-en { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.1em; margin-bottom: 20px; }
+    .profile-text p { font-size: 0.95rem; color: var(--gray); line-height: 2; margin-bottom: 16px; }
+    .profile-sns { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .sns-btn { padding: 8px 18px; border-radius: 20px; text-decoration: none; font-size: 0.8rem; font-weight: 700; color: white; transition: opacity 0.3s; }
+    .sns-btn:hover { opacity: 0.8; }
+    .sns-fb { background: #1877f2; }
+    .sns-ig { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .sns-yt { background: #ff0000; }
+    .sns-line { background: #06C755; }
+    .sns-note { background: #41c9b4; }
+
+    /* 実績 */
+    .achievements { padding: 80px 40px; background: var(--light); }
+    .achievements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .achievement-card { background: white; border-radius: 16px; padding: 32px 24px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .achievement-number { font-family: 'Noto Serif JP', serif; font-size: 2.4rem; font-weight: 700; color: var(--green-light); margin-bottom: 8px; }
+    .achievement-label { font-size: 0.85rem; color: var(--gray); }
+
+    /* CTA */
+    .cta { padding: 80px 40px; background: linear-gradient(135deg, #00b4c8, #1a2d4a); text-align: center; color: white; }
+    .cta h2 { font-family: 'Noto Serif JP', serif; font-size: 1.8rem; margin-bottom: 20px; }
+    .cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 32px; }
+    .cta-btn { display: inline-block; background: #00b4c8; color: #0d1b2e; padding: 16px 40px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
+    .cta-btn:hover { transform: translateY(-3px); }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 48px 40px 32px; text-align: center; }
+    .footer-logo { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; color: white; margin-bottom: 8px; }
+    .footer-policy { margin-bottom: 16px; }
+    .footer-policy a { color: rgba(255,255,255,0.6); font-size: 0.75rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
+
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .section-title h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--green); margin-bottom: 12px; }
+    .section-title p { color: var(--gray); font-size: 0.9rem; }
+
+    .fade-in { opacity: 0; transform: translateY(24px); transition: 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ハンバーガー */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,180,200,0.15); z-index: 999; padding: 20px 0 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; }
+    .mobile-menu ul li a { display: block; padding: 14px 32px; font-size: 0.95rem; color: var(--dark); text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(0,180,200,0.08); }
+    .mobile-menu .mobile-line { display: block; margin: 20px 32px 0; background: #06C755; color: white; text-align: center; padding: 14px; border-radius: 30px; font-weight: 700; font-size: 0.92rem; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .nav-line { display: none; }
+      .hamburger { display: flex; }
+      .breadcrumb { padding: 80px 24px 20px; }
+      .page-hero { padding: 40px 24px; }
+      .profile { padding: 60px 24px; }
+      .achievements { padding: 60px 24px; }
+      .achievements-grid { grid-template-columns: 1fr; }
+      .cta { padding: 60px 24px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "トップ", "item": "https://www.smileplusctg.com/" },
+      { "@type": "ListItem", "position": 2, "name": "私達について", "item": "https://www.smileplusctg.com/profile.html" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="rogo.png" alt="スマイルプラスコンサルティング" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <span class="logo-fallback" style="display:none;">SPC</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="profile.html">私達について</a></li>
+      <li><a href="plan.html">支援プラン</a></li>
+      <li><a href="services.html">できること</a></li>
+      <li><a href="tools.html">公式ツール</a></li>
+      <li><a href="faq.html">よくあるご質問</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="nav-line" target="_blank">🌱 LINEで相談</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="profile.html" class="mobile-nav-link">私達について</a></li>
+      <li><a href="plan.html" class="mobile-nav-link">支援プラン</a></li>
+      <li><a href="services.html" class="mobile-nav-link">できること</a></li>
+      <li><a href="tools.html" class="mobile-nav-link">公式ツール</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">よくあるご質問</a></li>
+      <li><a href="index.html#contact" class="mobile-nav-link">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="mobile-line" target="_blank">🌱 LINEで無料相談</a>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a>
+    <span>›</span>
+    私達について
+  </div>
+
+  <div class="page-hero">
+    <h1>私達について</h1>
+    <p>中小企業の宝探しをお手伝いする、スマイルプラスコンサルティングです。</p>
+  </div>
+
+  <section class="profile">
+    <div class="profile-inner">
+      <div class="profile-text fade-in">
+        <h2>Yoshiya Matsumoto</h2>
+        <div class="name-en">YoshiBon / スマイルプラスコンサルティング 代表</div>
+        <p>埼玉県越谷市を拠点に、中小企業の経営者のAI活用・Webコンサル・セミナー講師として活動しています。20年以上の中小企業支援経験と5,000時間以上のAI実践をもとに、経営者の想いを大切にしながら伴走します。</p>
+        <p>ChatGPTをはじめとするAIツールの活用支援から、Web制作・SNS運用・LINE活用まで一貫してサポート。「誰に、どう届けるか」を一緒に考え、成果につながる一歩を共に描いていきます。</p>
+        <p>モットーは「中小企業の宝探し」。経営者の想いや強みを引き出す支援を重視しています。</p>
+        <div class="profile-sns">
+          <a href="https://www.facebook.com/spcyoshiya" class="sns-btn sns-fb" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/yoshibon.style/" class="sns-btn sns-ig" target="_blank">Instagram</a>
+          <a href="https://www.youtube.com/@YoshiBonpj" class="sns-btn sns-yt" target="_blank">YouTube</a>
+          <a href="https://lin.ee/s9t1ERI" class="sns-btn sns-line" target="_blank">LINE</a>
+          <a href="https://note.com/_yoshibon" class="sns-btn sns-note" target="_blank">note</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="achievements">
+    <div class="section-title fade-in">
+      <h2>実績・経歴</h2>
+      <p>20年以上の経験と実績で、中小企業の成長を支援しています。</p>
+    </div>
+    <div class="achievements-grid">
+      <div class="achievement-card fade-in">
+        <div class="achievement-number">20<span style="font-size:1.2rem;">年+</span></div>
+        <div class="achievement-label">中小企業支援経験</div>
+      </div>
+      <div class="achievement-card fade-in">
+        <div class="achievement-number">5,000<span style="font-size:1.2rem;">h+</span></div>
+        <div class="achievement-label">AI実践時間</div>
+      </div>
+      <div class="achievement-card fade-in">
+        <div class="achievement-number">60<span style="font-size:1.2rem;">本+</span></div>
+        <div class="achievement-label">開発AIアプリ数</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>まずは気軽にご相談ください</h2>
+    <p>「話を聞くだけでもOK」そんな方も大歓迎です。</p>
+    <a href="https://lin.ee/s9t1ERI" class="cta-btn" target="_blank">🌱 無料Zoom相談をLINEで予約する</a>
+  </section>
+
+  <footer>
+    <div class="footer-logo">スマイルプラスコンサルティング</div>
+    <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);margin-bottom:12px;">埼玉県越谷市｜AI活用支援・Webコンサル・セミナー講師</div>
+    <div class="footer-policy"><a href="privacy.html">Privacy Policy</a></div>
+    <div class="footer-copy">© Smile Plus Consulting. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); });
+    });
+  </script>
+</body>
+</html>
