@@ -30,6 +30,26 @@
     .section-title { text-align: center; margin-bottom: 48px; }
     .section-title h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--green); margin-bottom: 12px; }
     .section-title p { color: var(--gray); font-size: 0.9rem; }
+    .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+    .stage-card { padding: 40px 32px; position: relative; display: flex; flex-direction: column; }
+    .stage-card:nth-child(1) { background: var(--green-pale); border-right: 1px solid rgba(0,180,200,0.2); }
+    .stage-card:nth-child(2) { background: #1a2d4a; color: white; }
+    .stage-card:nth-child(3) { background: var(--green-light); color: white; }
+    .stage-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; padding: 4px 14px; border-radius: 20px; margin-bottom: 20px; }
+    .stage-card:nth-child(1) .stage-label { background: var(--green-light); color: white; }
+    .stage-card:nth-child(2) .stage-label { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+    .stage-card:nth-child(3) .stage-label { background: rgba(255,255,255,0.2); color: white; }
+    .stage-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .stage-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.2rem; margin-bottom: 12px; }
+    .stage-card:nth-child(1) h3 { color: var(--green); }
+    .stage-price { font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; opacity: 0.85; }
+    .stage-card p { font-size: 0.85rem; line-height: 1.8; flex-grow: 1; }
+    .stage-card:nth-child(1) p { color: var(--gray); }
+    .stage-items { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .stage-item { font-size: 0.82rem; display: flex; align-items: flex-start; gap: 8px; opacity: 0.9; }
+    .stage-card:nth-child(1) .stage-item { color: var(--dark); }
+    .stage-arrow { display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--green-light); position: absolute; right: -18px; top: 50%; transform: translateY(-50%); z-index: 2; background: white; border-radius: 50%; width: 36px; height: 36px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
     .services { padding: 80px 40px; background: var(--light); }
     .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto; }
     .service-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.04); transition: transform 0.3s; display: flex; flex-direction: column; }
@@ -77,6 +97,9 @@
       .breadcrumb { padding: 80px 24px 20px; } .page-hero { padding: 40px 24px; }
       .services { padding: 60px 24px; } .industries { padding: 60px 24px; }
       .industry-grid { grid-template-columns: repeat(2, 1fr); } .cta { padding: 60px 24px; }
+      .stage-grid { grid-template-columns: 1fr; }
+      .stage-arrow { display: none; }
+      .three-stage { padding: 60px 24px !important; }
     }
   </style>
   <script type="application/ld+json">
@@ -94,8 +117,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="profile.html">私達について</a></li>
-      <li><a href="plan.html">支援プラン</a></li>
-      <li><a href="services.html">できること</a></li>
+      <li><a href="services.html">サービス</a></li>
       <li><a href="tools.html">公式ツール</a></li>
       <li><a href="faq.html">よくあるご質問</a></li>
       <li><a href="index.html#contact">お問い合わせ</a></li>
@@ -106,8 +128,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="profile.html" class="mobile-nav-link">私達について</a></li>
-      <li><a href="plan.html" class="mobile-nav-link">支援プラン</a></li>
-      <li><a href="services.html" class="mobile-nav-link">できること</a></li>
+      <li><a href="services.html" class="mobile-nav-link">サービス</a></li>
       <li><a href="tools.html" class="mobile-nav-link">公式ツール</a></li>
       <li><a href="faq.html" class="mobile-nav-link">よくあるご質問</a></li>
       <li><a href="index.html#contact" class="mobile-nav-link">お問い合わせ</a></li>
@@ -119,6 +140,53 @@
     <h1>できること</h1>
     <p>作業ではなく、想いをカタチに。サービスの先にあるのは"成果の物語"です。</p>
   </div>
+  <section class="three-stage" style="padding: 80px 40px; background: var(--white);">
+    <div class="section-title fade-in">
+      <h2>3つのステージで伴走します</h2>
+      <p>まずは気軽な一歩から。状況に合わせて、一緒に次のステージへ進めます。</p>
+    </div>
+    <div class="stage-grid">
+      <div class="stage-card fade-in">
+        <span class="stage-label">STAGE 1 ／ 入口</span>
+        <div class="stage-icon">🌱</div>
+        <h3>まず「見える」<br>ようにする</h3>
+        <div class="stage-price">LP制作 + LINE連携 + Google登録</div>
+        <p>最小構成のサイトをAI活用で素早く整え、問い合わせが入る状態を一緒につくります。</p>
+        <div class="stage-items">
+          <div class="stage-item">✅ AI活用でスピーディに制作</div>
+          <div class="stage-item">✅ スマホ最適化・SEO基礎設計</div>
+          <div class="stage-item">✅ 公式LINE・Googleビジネス連携</div>
+        </div>
+        <div class="stage-arrow">›</div>
+      </div>
+      <div class="stage-card fade-in">
+        <span class="stage-label">STAGE 2 ／ 継続</span>
+        <div class="stage-icon">🔄</div>
+        <h3>「続ける仕組み」<br>を育てる</h3>
+        <div class="stage-price">月額 継続サポート</div>
+        <p>SNS運用・LINE配信・月次レポートなど、売上に直結する発信を継続的にサポートします。</p>
+        <div class="stage-items">
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ SNS・LINE定期配信設計</div>
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ Googleアナリティクス月次確認</div>
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ MEO対策・口コミ管理支援</div>
+        </div>
+        <div class="stage-arrow" style="background:var(--green);color:white;">›</div>
+      </div>
+      <div class="stage-card fade-in">
+        <span class="stage-label">STAGE 3 ／ 高単価</span>
+        <div class="stage-icon">🚀</div>
+        <h3>「経営の武器」<br>をつくる</h3>
+        <div class="stage-price">AIチャットボット・補助金・EC構築</div>
+        <p>AIチャットボット設計・補助金申請支援・採用戦略など、上流から経営を支援します。</p>
+        <div class="stage-items">
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ DifyによるAIチャットボット設計</div>
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ IT導入・ものづくり補助金支援</div>
+          <div class="stage-item" style="color:rgba(255,255,255,0.9);">✅ 採用ページ・EC構築戦略</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="services">
     <div class="section-title fade-in"><h2>サービス一覧</h2><p>Web制作からAI活用まで、中小企業の成長を一貫サポートします。</p></div>
     <div class="service-grid">
