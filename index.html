@@ -486,6 +486,38 @@
     .sns-line { background: #06C755; }
     .sns-note { background: #41c9b4; }
 
+    /* 実績カード */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding: 0 40px;
+    }
+
+    .achievement-card {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .achievement-number {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--green-light);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .achievement-label {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
     .contact {
       padding: 80px 40px;
       background: var(--light);
@@ -1063,40 +1095,94 @@
       scroll-margin-top: 80px;
     }
 
-    /* ヒーローニュースリリースバナー */
+    /* ヒーローNEWSリスト */
     .hero-news {
       animation: fadeUp 0.8s 0.6s ease both;
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
     }
 
     .hero-news-inner {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 16px;
       padding: 24px 28px;
       text-align: left;
       backdrop-filter: blur(6px);
     }
 
-    .hero-news-label {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--dark);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 14px;
-      letter-spacing: 0.05em;
+    .hero-news-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      margin-bottom: 16px;
     }
 
-    .hero-news-text {
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.9;
-      margin-bottom: 18px;
-      animation: none;
+    .hero-news-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-news-sub {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .news-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+    }
+
+    .news-date {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+      font-family: monospace;
+    }
+
+    .news-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .badge-news { background: #00b4c8; color: #0d1b2e; }
+    .badge-info { background: rgba(255,255,255,0.2); color: white; }
+    .badge-partner { background: #06C755; color: white; }
+    .badge-event { background: #f59e0b; color: #0d1b2e; }
+
+    .news-text {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .news-text a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+    }
+
+    .news-text a:hover {
+      color: #00b4c8;
+      text-decoration: underline;
     }
 
     .hero-news-btns {
@@ -1120,20 +1206,7 @@
       text-align: center;
     }
 
-    .hero-news-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    .btn-zoom {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.4);
-    }
-
-    .btn-zoom:hover {
-      background: rgba(255,255,255,0.3);
-    }
+    .hero-news-btn:hover { transform: translateY(-2px); }
 
     .btn-news {
       background: #00b4c8;
@@ -1141,9 +1214,15 @@
       box-shadow: 0 3px 12px rgba(0,180,200,0.4);
     }
 
-    .btn-news:hover {
-      box-shadow: 0 6px 20px rgba(0,180,200,0.55);
+    .btn-news:hover { box-shadow: 0 6px 20px rgba(0,180,200,0.55); }
+
+    .btn-zoom {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
     }
+
+    .btn-zoom:hover { background: rgba(255,255,255,0.3); }
 
     /* スマホ専用改行・PC専用改行 */
     .br-mobile { display: none; }
@@ -1277,6 +1356,9 @@
       /* プロフィール */
       .profile-inner { flex-direction: column; text-align: center; gap: 32px; }
       .profile-sns { justify-content: center; }
+      .achievements-grid { grid-template-columns: repeat(3, 1fr); padding: 0 24px; gap: 12px; }
+      .achievement-card { padding: 20px 12px; }
+      .achievement-number { font-size: 1.6rem; }
 
       /* CTA */
       .cta { padding: 72px 24px; }
@@ -1307,8 +1389,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="profile.html">私達について</a></li>
-      <li><a href="plan.html">支援プラン</a></li>
-      <li><a href="services.html">できること</a></li>
+      <li><a href="services.html">サービス</a></li>
       <li><a href="tools.html">公式ツール</a></li>
       <li><a href="faq.html">よくあるご質問</a></li>
       <li><a href="#contact">お問い合わせ</a></li>
@@ -1323,8 +1404,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="profile.html" class="mobile-nav-link">私達について</a></li>
-      <li><a href="plan.html" class="mobile-nav-link">支援プラン</a></li>
-      <li><a href="services.html" class="mobile-nav-link">できること</a></li>
+      <li><a href="services.html" class="mobile-nav-link">サービス</a></li>
       <li><a href="tools.html" class="mobile-nav-link">公式ツール</a></li>
       <li><a href="faq.html" class="mobile-nav-link">よくあるご質問</a></li>
       <li><a href="#contact" class="mobile-nav-link">お問い合わせ</a></li>
@@ -1339,8 +1419,27 @@
       <p>AI活用支援・Web制作・SNS運用・動画・広告・音楽制作<span class="br-mobile"></span><br class="br-pc">を通じて、企業さまの"眠っている強み"を一緒に見つけ、<br>未来への成長をサポートします。🌱✨</p>
       <div class="hero-news fade-in">
         <div class="hero-news-inner">
-          <div class="hero-news-label">📢 ニュースリリース</div>
-          <p class="hero-news-text">AI活用をもっと身近に。中小企業や個人事業主の課題解決を支援する「みっけカタログ」を公開しました✨<br>集客・業務改善・SNS運用などに役立つアプリやツールを掲載。あわせて、士業・コンサルタント・講師・IT事業者などの共創パートナーも募集しています🤝🌱</p>
+          <div class="hero-news-header">
+            <div class="hero-news-title">NEWS</div>
+            <div class="hero-news-sub">お知らせ・最新情報</div>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <span class="news-date">2026.07.25</span>
+              <span class="news-badge badge-news">ニュース</span>
+              <span class="news-text"><a href="https://mikke-catalog.pages.dev/" target="_blank">みっけカタログを公開しました。中小企業向けAIアプリ60本以上を掲載✨</a></span>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026.07.25</span>
+              <span class="news-badge badge-info">お知らせ</span>
+              <span class="news-text">スマイルプラスコンサルティング公式サイトをリニューアルしました🌱</span>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026.07.13</span>
+              <span class="news-badge badge-partner">共創募集</span>
+              <span class="news-text">士業・コンサルタント・講師・IT事業者などの共創パートナーを募集しています🤝</span>
+            </div>
+          </div>
           <div class="hero-news-btns">
             <a href="https://mikke-catalog.pages.dev/" class="hero-news-btn btn-news" target="_blank">📢 みっけカタログを見てみる</a>
             <a href="#contact" class="hero-news-btn btn-zoom">📩 お問合せはこちらからどうぞ</a>
@@ -1682,6 +1781,20 @@
         </div>
       </div>
     </div>
+    <div class="achievements-grid fade-in">
+      <div class="achievement-card">
+        <div class="achievement-number" data-target="20" data-suffix="年+">0</div>
+        <div class="achievement-label">中小企業支援経験</div>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-number" data-target="5000" data-suffix="h+">0</div>
+        <div class="achievement-label">AI実践時間</div>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-number" data-target="60" data-suffix="本+">0</div>
+        <div class="achievement-label">開発AIアプリ数</div>
+      </div>
+    </div>
   </section>
 
   <section class="cta">
@@ -1846,6 +1959,37 @@
         hamburger.classList.remove('open');
         mobileMenu.classList.remove('open');
       });
+    });
+
+    // カウントアップアニメーション
+    function countUp(el) {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const step = target > 1000 ? 50 : 1;
+      const intervalTime = Math.floor(duration / (target / step));
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = current.toLocaleString() + suffix;
+      }, intervalTime);
+    }
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.achievement-number[data-target]').forEach(el => {
+      countObserver.observe(el);
     });
 
     const observer = new IntersectionObserver((entries) => {
