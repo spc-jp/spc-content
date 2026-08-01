@@ -2187,8 +2187,19 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.05 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // アンカーリンクで直接ジャンプした場合にfade-inを即時表示
+    if (window.location.hash) {
+      setTimeout(() => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          target.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
 
     // お問い合わせフォーム（mailto方式）
     const form = document.getElementById('contactForm');
