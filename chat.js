@@ -83,7 +83,7 @@
       position: fixed;
       bottom: 180px;
       right: 24px;
-      width: 320px;
+      width: 380px;
       background: white;
       border-radius: 20px;
       box-shadow: 0 8px 40px rgba(0,0,0,0.18);
