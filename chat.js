@@ -216,12 +216,12 @@
       <div class="chat-body" id="chatBody">
         <div class="chat-bubble bot">こんにちは！SPCコンシェルジュです。<br>ご用件を選んでください😊</div>
         <div class="chat-options" id="chatOptions">
-          <button class="chat-option" onclick="spcChat.select(1)">1️⃣ AI活用について知りたい</button>
-          <button class="chat-option" onclick="spcChat.select(2)">2️⃣ Web・SNS・集客の相談をしたい</button>
-          <button class="chat-option" onclick="spcChat.select(3)">3️⃣ セミナー講師の依頼をしたい</button>
-          <button class="chat-option" onclick="spcChat.select(4)">4️⃣ 無料Zoom相談を予約したい</button>
-          <button class="chat-option" onclick="spcChat.select(5)">5️⃣ みっけカタログを見てみたい</button>
-          <button class="chat-option" onclick="spcChat.select(6)">6️⃣ お問い合わせフォームへ</button>
+          <button class="chat-option" onclick="spcChat.select(1)">1️⃣ AIって何から始めればいいの？</button>
+          <button class="chat-option" onclick="spcChat.select(2)">2️⃣ Web・SNS・集客がうまくいかない…</button>
+          <button class="chat-option" onclick="spcChat.select(3)">3️⃣ AI・DXのセミナー講師を探している</button>
+          <button class="chat-option" onclick="spcChat.select(4)">4️⃣ まず話だけ聞いてみたい</button>
+          <button class="chat-option" onclick="spcChat.select(5)">5️⃣ 使えるAIアプリを探している</button>
+          <button class="chat-option" onclick="spcChat.select(6)">6️⃣ 自分のサイト、AI検索で見つかってる？</button>
         </div>
       </div>
       <div class="chat-footer">選択肢にない場合は<a href="${contactUrl}" id="chatContactLink">こちらから直接お問い合わせください</a></div>
@@ -232,12 +232,12 @@
 
   // 返答データ
   const responses = {
-    1: { user: '1️⃣ AI活用について知りたい', bot: 'ChatGPTなどAIツールの活用方法をご支援しています！業務効率化・集客・SNS運用など幅広く対応しています。まずは無料Zoom相談でお気軽にご相談ください🌱', link: { text: '📅 無料Zoom相談を予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
-    2: { user: '2️⃣ Web・SNS・集客の相談をしたい', bot: 'ホームページ制作・SNS運用・LINE活用・広告運用など、集客に関するお悩みを一緒に解決します🌱', link: { text: '📅 無料Zoom相談を予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
-    3: { user: '3️⃣ セミナー講師の依頼をしたい', bot: 'AI活用セミナー・研修講師のご依頼を承っています。業種問わず対応可能です✨', link: { text: '📩 お問い合わせフォームへ', url: contactUrl, external: false }},
-    4: { user: '4️⃣ 無料Zoom相談を予約したい', bot: '30分の無料Zoom相談を随時受付中です！LINEで希望日時をお送りください😊', link: { text: '🌱 LINEで予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
-    5: { user: '5️⃣ みっけカタログを見てみたい', bot: 'SPCが開発した中小企業向けAIアプリ60本以上のカタログです。無料お試し機能つきです✨', link: { text: '🗂 みっけカタログを見てみる', url: 'https://mikke-catalog.pages.dev/', external: true }},
-    6: { user: '6️⃣ お問い合わせフォームへ', bot: 'お問い合わせフォームにご案内します🌱', link: { text: '📩 お問い合わせフォームへ', url: contactUrl, external: false }}
+    1: { user: '1️⃣ AIって何から始めればいいの？', bot: 'ChatGPTなどAIツールの活用方法をご支援しています！業務効率化・集客・SNS運用など幅広く対応しています。まずは無料Zoom相談でお気軽にご相談ください🌱', link: { text: '📅 無料Zoom相談を予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
+    2: { user: '2️⃣ Web・SNS・集客がうまくいかない…', bot: 'ホームページ制作・SNS運用・LINE活用・広告運用など、集客に関するお悩みを一緒に解決します🌱', link: { text: '📅 無料Zoom相談を予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
+    3: { user: '3️⃣ AI・DXのセミナー講師を探している', bot: 'AI活用セミナー・研修講師のご依頼を承っています。業種問わず対応可能です。オンライン・対面どちらもOKです✨', link: { text: '📩 お問い合わせフォームへ', url: contactUrl, external: false }},
+    4: { user: '4️⃣ まず話だけ聞いてみたい', bot: '30分の無料Zoom相談を随時受付中です！LINEで希望日時をお送りください。話を聞くだけでも大歓迎です😊', link: { text: '🌱 LINEで予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
+    5: { user: '5️⃣ 使えるAIアプリを探している', bot: 'SPCが開発した中小企業向けAIアプリ60本以上のカタログです。無料お試し機能つきで、まず触ってから判断できます✨', link: { text: '🗂 みっけカタログを見てみる', url: 'https://mikke-catalog.pages.dev/', external: true }},
+    6: { user: '6️⃣ 自分のサイト、AI検索で見つかってる？', bot: 'AI検索（ChatGPT・Perplexityなど）であなたのサイトが正しく認識されているか無料でチェックできます。まずは診断してみてください✨', link: { text: '🔍 AI検索対応チェックはこちら', url: 'https://spc-jp.github.io/aio-vision/', external: true }}
   };
 
   // チャット機能
@@ -288,12 +288,12 @@
       chatBody.innerHTML = `
         <div class="chat-bubble bot">こんにちは！SPCコンシェルジュです。<br>ご用件を選んでください😊</div>
         <div class="chat-options" id="chatOptions">
-          <button class="chat-option" onclick="spcChat.select(1)">1️⃣ AI活用について知りたい</button>
-          <button class="chat-option" onclick="spcChat.select(2)">2️⃣ Web・SNS・集客の相談をしたい</button>
-          <button class="chat-option" onclick="spcChat.select(3)">3️⃣ セミナー講師の依頼をしたい</button>
-          <button class="chat-option" onclick="spcChat.select(4)">4️⃣ 無料Zoom相談を予約したい</button>
-          <button class="chat-option" onclick="spcChat.select(5)">5️⃣ みっけカタログを見てみたい</button>
-          <button class="chat-option" onclick="spcChat.select(6)">6️⃣ お問い合わせフォームへ</button>
+          <button class="chat-option" onclick="spcChat.select(1)">1️⃣ AIって何から始めればいいの？</button>
+          <button class="chat-option" onclick="spcChat.select(2)">2️⃣ Web・SNS・集客がうまくいかない…</button>
+          <button class="chat-option" onclick="spcChat.select(3)">3️⃣ AI・DXのセミナー講師を探している</button>
+          <button class="chat-option" onclick="spcChat.select(4)">4️⃣ まず話だけ聞いてみたい</button>
+          <button class="chat-option" onclick="spcChat.select(5)">5️⃣ 使えるAIアプリを探している</button>
+          <button class="chat-option" onclick="spcChat.select(6)">6️⃣ 自分のサイト、AI検索で見つかってる？</button>
         </div>`;
     }
   };

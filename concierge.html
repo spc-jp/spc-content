@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPCコンシェルジュ｜スマイルプラスコンサルティング</title>
+  <meta name="description" content="スマイルプラスコンサルティングへのご相談はこちら。AI活用・Web・SNS・セミナー講師など、お気軽にご相談ください。">
+  <link rel="icon" type="image/png" href="https://www.smileplusctg.com/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: linear-gradient(135deg, #0d1b2e 0%, #1a2d4a 60%, #00b4c8 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .logo {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .logo img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      color: white;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .chat-card {
+      background: white;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 360px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+    }
+
+    .chat-header {
+      background: #1a2d4a;
+      color: white;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chat-header-icon {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .chat-header-icon img { width: 36px; height: 36px; object-fit: contain; padding: 3px; }
+    .chat-header-title { font-weight: 700; font-size: 0.95rem; }
+    .chat-header-sub { font-size: 0.7rem; opacity: 0.7; margin-top: 2px; }
+
+    .chat-body { padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; }
+
+    .chat-bubble {
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      background: #f0f4f8;
+      color: #1a2d4a;
+      border-bottom-left-radius: 4px;
+      max-width: 90%;
+    }
+
+    .chat-bubble.user {
+      background: #00b4c8;
+      color: white;
+      align-self: flex-end;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-options { display: flex; flex-direction: column; gap: 8px; }
+
+    .chat-option {
+      background: white;
+      border: 1px solid #e0e8f0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.83rem;
+      color: #1a2d4a;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      transition: background 0.2s, border-color 0.2s;
+      width: 100%;
+    }
+
+    .chat-option:hover { background: #e6f7fa; border-color: #00b4c8; }
+
+    .chat-footer {
+      padding: 12px 16px;
+      font-size: 0.72rem;
+      color: #999;
+      border-top: 1px solid #f0f0f0;
+      text-align: center;
+    }
+
+    .chat-footer a { color: #00b4c8; text-decoration: none; }
+
+    .bottom-links {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .bottom-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: transform 0.2s;
+    }
+
+    .bottom-link:hover { transform: translateY(-2px); }
+    .link-line { background: #06C755; color: white; }
+    .link-top { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="https://www.smileplusctg.com/favicon.png" alt="SPC">
+  </div>
+  <div class="title">SPCコンシェルジュ</div>
+  <div class="subtitle">Smile Plus Consulting</div>
+
+  <div class="chat-card">
+    <div class="chat-header">
+      <div class="chat-header-icon">
+        <img src="https://www.smileplusctg.com/favicon.png" alt="SPC">
+      </div>
+      <div>
+        <div class="chat-header-title">SPCコンシェルジュ</div>
+        <div class="chat-header-sub">Smile Plus Consulting</div>
+      </div>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-bubble">こんにちは！SPCコンシェルジュです。<br>ご用件を選んでください😊</div>
+      <div class="chat-options" id="chatOptions">
+        <button class="chat-option" onclick="select(1)">1️⃣ AIって何から始めればいいの？</button>
+        <button class="chat-option" onclick="select(2)">2️⃣ Web・SNS・集客がうまくいかない…</button>
+        <button class="chat-option" onclick="select(3)">3️⃣ AI・DXのセミナー講師を探している</button>
+        <button class="chat-option" onclick="select(4)">4️⃣ まず話だけ聞いてみたい</button>
+        <button class="chat-option" onclick="select(5)">5️⃣ 使えるAIアプリを探している</button>
+        <button class="chat-option" onclick="select(6)">6️⃣ 自分のサイト、AI検索で見つかってる？</button>
+      </div>
+    </div>
+    <div class="chat-footer">選択肢にない場合は<a href="https://www.smileplusctg.com/#contact">こちらから直接お問い合わせください</a></div>
+  </div>
+
+  <div class="bottom-links">
+    <a href="https://lin.ee/s9t1ERI" class="bottom-link link-line" target="_blank">🌱 LINEで相談</a>
+    <a href="https://www.smileplusctg.com/" class="bottom-link link-top">🏠 サイトトップへ</a>
+  </div>
+
+  <script>
+    const responses = {
+      1: { user: '1️⃣ AIって何から始めればいいの？', bot: 'ChatGPTなどAIツールの活用方法をご支援しています！業務効率化・集客・SNS運用など幅広く対応しています。まずは無料Zoom相談でお気軽にご相談ください🌱', link: { text: '📅 無料Zoom相談を予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
+      2: { user: '2️⃣ Web・SNS・集客がうまくいかない…', bot: 'ホームページ制作・SNS運用・LINE活用・広告運用など、集客に関するお悩みを一緒に解決します🌱', link: { text: '📅 無料Zoom相談を予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
+      3: { user: '3️⃣ AI・DXのセミナー講師を探している', bot: 'AI活用セミナー・研修講師のご依頼を承っています。業種問わず対応可能です✨', link: { text: '📩 お問い合わせフォームへ', url: 'https://www.smileplusctg.com/#contact', external: false }},
+      4: { user: '4️⃣ まず話だけ聞いてみたい', bot: '30分の無料Zoom相談を随時受付中です！LINEで希望日時をお送りください😊', link: { text: '🌱 LINEで予約する', url: 'https://lin.ee/s9t1ERI', external: true }},
+      5: { user: '5️⃣ 使えるAIアプリを探している', bot: 'SPCが開発した中小企業向けAIアプリ60本以上のカタログです。無料お試し機能つきです✨', link: { text: '🗂 みっけカタログを見てみる', url: 'https://mikke-catalog.pages.dev/', external: true }},
+      6: { user: '6️⃣ 自分のサイト、AI検索で見つかってる？', bot: 'AI検索（ChatGPT・Perplexityなど）であなたのサイトが正しく認識されているか無料でチェックできます✨', link: { text: '🔍 AI検索対応チェックはこちら', url: 'https://spc-jp.github.io/aio-vision/', external: true }}
+    };
+
+    function select(num) {
+      const res = responses[num];
+      const chatBody = document.getElementById('chatBody');
+      document.getElementById('chatOptions').style.display = 'none';
+
+      const userBubble = document.createElement('div');
+      userBubble.className = 'chat-bubble user';
+      userBubble.textContent = res.user;
+      chatBody.appendChild(userBubble);
+
+      setTimeout(() => {
+        const botBubble = document.createElement('div');
+        botBubble.className = 'chat-bubble';
+        botBubble.innerHTML = res.bot;
+        chatBody.appendChild(botBubble);
+
+        const linkBtn = document.createElement('a');
+        linkBtn.className = 'chat-option';
+        linkBtn.style.textAlign = 'center';
+        linkBtn.style.display = 'block';
+        linkBtn.style.textDecoration = 'none';
+        linkBtn.textContent = res.link.text;
+        linkBtn.href = res.link.url;
+        if (res.link.external) linkBtn.target = '_blank';
+        chatBody.appendChild(linkBtn);
+
+        const resetBtn = document.createElement('button');
+        resetBtn.className = 'chat-option';
+        resetBtn.style.textAlign = 'center';
+        resetBtn.style.color = '#999';
+        resetBtn.style.fontWeight = 'normal';
+        resetBtn.textContent = '🔄 最初に戻る';
+        resetBtn.addEventListener('click', resetChat);
+        chatBody.appendChild(resetBtn);
+
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 500);
+    }
+
+    function resetChat() {
+      document.getElementById('chatBody').innerHTML = `
+        <div class="chat-bubble">こんにちは！SPCコンシェルジュです。<br>ご用件を選んでください😊</div>
+        <div class="chat-options" id="chatOptions">
+          <button class="chat-option" onclick="select(1)">1️⃣ AIって何から始めればいいの？</button>
+          <button class="chat-option" onclick="select(2)">2️⃣ Web・SNS・集客がうまくいかない…</button>
+          <button class="chat-option" onclick="select(3)">3️⃣ AI・DXのセミナー講師を探している</button>
+          <button class="chat-option" onclick="select(4)">4️⃣ まず話だけ聞いてみたい</button>
+          <button class="chat-option" onclick="select(5)">5️⃣ 使えるAIアプリを探している</button>
+          <button class="chat-option" onclick="select(6)">6️⃣ 自分のサイト、AI検索で見つかってる？</button>
+        </div>`;
+    }
+  </script>
+</body>
+</html>
