@@ -135,33 +135,33 @@
     .chat-close:hover { opacity: 1; }
 
     .chat-body {
-      padding: 20px 16px;
-      max-height: 360px;
+      padding: 16px;
+      max-height: 420px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
     }
 
     .chat-bubble {
-      padding: 12px 16px;
+      padding: 10px 14px;
       border-radius: 16px;
       font-size: 0.85rem;
-      line-height: 1.7;
+      line-height: 1.6;
       max-width: 90%;
     }
 
     .chat-bubble.bot { background: #f0f4f8; color: #1a2d4a; border-bottom-left-radius: 4px; }
-    .chat-bubble.user { background: #00b4c8; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+    .chat-bubble.user { background: #00b4c8; color: white; align-self: flex-end; border-bottom-left-radius: 16px; border-bottom-right-radius: 4px; }
 
-    .chat-options { display: flex; flex-direction: column; gap: 8px; }
+    .chat-options { display: flex; flex-direction: column; gap: 6px; }
 
     .chat-option {
       background: white;
       border: 1px solid #e0e8f0;
-      border-radius: 12px;
-      padding: 12px 16px;
-      font-size: 0.83rem;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
       color: #1a2d4a;
       cursor: pointer;
       text-align: left;
@@ -206,7 +206,7 @@
     <div class="chat-window" id="chatWindow">
       <div class="chat-header">
         <div class="chat-header-icon">
-          <img src="https://www.smileplusctg.com/favicon.png" alt="SPC">
+          <img src="https://www.smileplusctg.com/favicon.png" alt="SPC" onerror="this.parentElement.innerHTML='💼'">
         </div>
         <div>
           <div class="chat-header-title">SPCコンシェルジュ</div>
