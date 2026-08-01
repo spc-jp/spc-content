@@ -81,7 +81,7 @@
 
     .chat-window {
       position: fixed;
-      bottom: 180px;
+      bottom: 140px;
       right: 24px;
       width: 380px;
       background: white;
@@ -136,7 +136,7 @@
 
     .chat-body {
       padding: 16px;
-      max-height: 420px;
+      max-height: 360px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
