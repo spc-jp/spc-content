@@ -84,7 +84,7 @@
       bottom: 140px;
       right: 24px;
       width: 380px;
-      max-height: calc(100vh - 160px);
+      max-height: calc(100vh - 200px);
       background: white;
       border-radius: 20px;
       box-shadow: 0 8px 40px rgba(0,0,0,0.18);
@@ -98,9 +98,10 @@
       .chat-window {
         width: calc(100vw - 32px);
         right: 16px;
-        bottom: auto;
-        top: 16px;
-        max-height: calc(100vh - 160px);
+        left: 16px;
+        bottom: 140px;
+        top: auto;
+        max-height: calc(100vh - 200px);
       }
     }
 
@@ -153,7 +154,7 @@
 
     .chat-body {
       padding: 16px;
-      max-height: 360px;
+      max-height: calc(100vh - 320px);
       overflow-y: auto;
       display: flex;
       flex-direction: column;
