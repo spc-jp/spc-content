@@ -1699,6 +1699,109 @@
       .banner-grid { grid-template-columns: 1fr; }
       .industry-grid { grid-template-columns: 1fr; }
     }
+  
+    /* ===== Mobile readability final pass ===== */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+        line-height: 1.8;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* Section headings: keep Japanese headings comfortably readable */
+      .section-title h2,
+      .profile-text h2,
+      .mikke-text h2,
+      .cta h2 {
+        font-size: clamp(1.35rem, 6vw, 1.65rem);
+        line-height: 1.5;
+        letter-spacing: 0.01em;
+      }
+
+      /* "スマイルプラスコンサルティングとは？..." heading */
+      .about h2,
+      #about h2 {
+        font-size: clamp(1.35rem, 6vw, 1.65rem);
+        line-height: 1.55;
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+      }
+
+      h3,
+      .service-top h3,
+      .stage-card h3,
+      .industry-card h3,
+      .step-content h3 {
+        font-size: 1.05rem;
+        line-height: 1.55;
+      }
+
+      p,
+      .banner-card p,
+      .service-body p,
+      .profile-text p,
+      .industry-card p,
+      .step-content p,
+      .faq-a p {
+        font-size: 0.92rem;
+        line-height: 1.85;
+      }
+
+      .faq-q {
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      .industry-tag,
+      .stage-label,
+      .step-highlight,
+      .hero-badge {
+        font-size: 0.78rem;
+      }
+
+      /* Prevent cramped content on narrow phones */
+      .banners,
+      .worries,
+      .services,
+      .profile,
+      .contact,
+      .faq-section,
+      .three-stage,
+      .industries,
+      .mikke-catalog-banner,
+      .how-we-work {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .contact-form {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .section-title h2,
+      .profile-text h2,
+      .mikke-text h2,
+      .cta h2,
+      .about h2,
+      #about h2 {
+        font-size: 1.3rem;
+      }
+
+      p,
+      .banner-card p,
+      .service-body p,
+      .profile-text p,
+      .industry-card p,
+      .step-content p,
+      .faq-a p,
+      .faq-q {
+        font-size: 0.9rem;
+      }
+    }
+
   </style>
 </head>
 <body>
