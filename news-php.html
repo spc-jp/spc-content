@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP脆弱性についてのご報告｜スマイルプラスコンサルティング</title>
+  <meta name="description" content="現在確認されているPHPの脆弱性（CVSS 9.2）について、SPCの対応状況と概要をわかりやすくご案内いたします。WordPress保守サービスをご利用のお客様へ。">
+  <link rel="canonical" href="https://www.smileplusctg.com/news-php.html">
+  <link rel="icon" type="image/png" href="https://www.smileplusctg.com/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1a2d4a;
+      --green-light: #00b4c8;
+      --green-pale: #e6f7fa;
+      --dark: #1a2d4a;
+      --gray: #666;
+      --light: #f4fafc;
+      --white: #ffffff;
+      --alert: #e85d04;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--white); color: var(--dark); line-height: 1.8; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,180,200,0.15);
+      padding: 14px 40px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 48px; width: auto; }
+    .logo-fallback { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; color: var(--green); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--green-light); }
+    .nav-line { background: #06C755; color: white; padding: 8px 14px; border-radius: 24px; text-decoration: none; font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,180,200,0.15); z-index: 999; padding: 20px 0 28px; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; }
+    .mobile-menu ul li a { display: block; padding: 14px 32px; font-size: 0.95rem; color: var(--dark); text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(0,180,200,0.08); }
+    .mobile-menu .mobile-line { display: block; margin: 20px 32px 0; background: #06C755; color: white; text-align: center; padding: 14px; border-radius: 30px; font-weight: 700; font-size: 0.92rem; text-decoration: none; }
+
+    .breadcrumb { padding: 100px 40px 20px; background: var(--light); font-size: 0.8rem; color: var(--gray); }
+    .breadcrumb a { color: var(--green-light); text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #1a2d4a 0%, #2d4a6e 100%);
+      padding: 48px 40px;
+      color: white;
+      text-align: center;
+    }
+    .alert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,93,4,0.2);
+      border: 1px solid rgba(232,93,4,0.5);
+      color: #ffab00;
+      padding: 6px 20px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .page-hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 12px; }
+    .page-hero .meta { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+
+    .content { max-width: 840px; margin: 0 auto; padding: 60px 40px; }
+
+    .lead-box {
+      background: #fff8f0;
+      border-left: 4px solid var(--alert);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 0.92rem;
+      line-height: 1.9;
+      color: #444;
+    }
+
+    .infographic {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      margin-bottom: 48px;
+    }
+
+    .section-block {
+      margin-bottom: 40px;
+    }
+
+    .section-block h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      color: var(--green);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--green-pale);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-block p {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 2;
+      margin-bottom: 12px;
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .check-list li {
+      font-size: 0.88rem;
+      color: #444;
+      padding: 12px 16px;
+      background: var(--green-pale);
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .check-list li::before {
+      content: '✅';
+      flex-shrink: 0;
+    }
+
+    .safe-box {
+      background: linear-gradient(135deg, #1a2d4a, #2d4a6e);
+      color: white;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .safe-box h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .safe-box p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.9;
+    }
+
+    .cta-section {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cta-section h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #06C755;
+      color: white;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      box-shadow: 0 4px 20px rgba(6,199,85,0.35);
+      transition: transform 0.3s;
+    }
+
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green-light);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 48px 40px 32px; text-align: center; }
+    .footer-logo { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; color: white; margin-bottom: 8px; }
+    .footer-policy { margin-bottom: 16px; }
+    .footer-policy a { color: rgba(255,255,255,0.6); font-size: 0.75rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
+
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .nav-line { display: none; }
+      .hamburger { display: flex; }
+      .breadcrumb { padding: 80px 24px 20px; }
+      .page-hero { padding: 36px 24px; }
+      .content { padding: 40px 24px; }
+      .safe-box { padding: 24px 20px; }
+      .cta-section { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="rogo.png" alt="スマイルプラスコンサルティング" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <span class="logo-fallback" style="display:none;">SPC</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="profile.html">私達について</a></li>
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="tools.html">公式ツール</a></li>
+      <li><a href="faq.html">よくあるご質問</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="nav-line" target="_blank">🌱 LINEで相談</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="profile.html" class="mobile-nav-link">私達について</a></li>
+      <li><a href="services.html" class="mobile-nav-link">サービス</a></li>
+      <li><a href="tools.html" class="mobile-nav-link">公式ツール</a></li>
+      <li><a href="faq.html" class="mobile-nav-link">よくあるご質問</a></li>
+      <li><a href="index.html#contact" class="mobile-nav-link">お問い合わせ</a></li>
+    </ul>
+    <a href="https://lin.ee/s9t1ERI" class="mobile-line" target="_blank">🌱 LINEで無料相談</a>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a>
+    <span>›</span>
+    <a href="index.html#news">NEWS</a>
+    <span>›</span>
+    PHP脆弱性についてのご報告
+  </div>
+
+  <div class="page-hero">
+    <div class="alert-badge">🔒 セキュリティ情報</div>
+    <h1>PHP脆弱性についてのご報告</h1>
+    <div class="meta">2026年10月23日｜スマイルプラスコンサルティング</div>
+  </div>
+
+  <div class="content">
+
+    <div class="lead-box">
+      いつもSPCのWordPress保守サービスをご利用いただき、ありがとうございます。<br>
+      現在確認されているPHPの脆弱性（深刻度：CVSS 9.2）について、概要と対応状況をわかりやすくご案内いたします。<strong>お客様側での特別な操作は不要です。</strong>SPCが責任を持って確認・対応を進めてまいります。
+    </div>
+
+    <img src="php-security-notice.png" alt="PHP脆弱性対応の4ステップ図解" class="infographic">
+
+    <div class="section-block">
+      <h2>🔍 今回の脆弱性について</h2>
+      <p>今回確認されたのはPHP本体の脆弱性です。WordPressのプラグインや本体の問題ではありません。</p>
+      <ul class="check-list">
+        <li>対象：PHP 8.1以前のバージョンを使用しているサイト</li>
+        <li>深刻度：CVSS 9.2（最高レベルに近い深刻な脆弱性）</li>
+        <li>原因：PHP本体の脆弱性（WordPress本体・プラグインの問題ではありません）</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <h2>⚠️ 想定されるリスク</h2>
+      <p>条件がそろった場合、ログインしていない外部の第三者でも脆弱性を悪用し、サーバー上で任意のコードを実行できる可能性があります。ただし現時点では「可能性がある」という段階であり、実際の被害は確認されていません。</p>
+    </div>
+
+    <div class="section-block">
+      <h2>🛡️ SPCの対応ステップ</h2>
+      <ul class="check-list">
+        <li>保守対象のWordPressサイトのPHPバージョンを順次確認しています</li>
+        <li>PHPの修正パッチ提供状況を確認しています</li>
+        <li>安全性を確認しながら、対象環境を順次アップデートします</li>
+        <li>作業完了後、改めてご報告いたします（目安：一両日以内）</li>
+      </ul>
+    </div>
+
+    <div class="safe-box">
+      <h3>🌱 お客様へ</h3>
+      <p>現在、保守対象のWordPressサイトを順次確認しています。<br>
+      <strong style="color:#FFE566;">お客様側での特別な操作は一切不要です。</strong><br>
+      安心してご利用いただけるよう、SPCが確認・対応を進めます。</p>
+    </div>
+
+    <div class="cta-section">
+      <h3>ご不明な点はお気軽にご相談ください</h3>
+      <p>「自分のサイトは大丈夫？」「WordPressの保守を依頼したい」<br>そんな方もLINEからお気軽にどうぞ。</p>
+      <a href="https://lin.ee/s9t1ERI" class="cta-btn" target="_blank">🌱 LINEで相談する</a>
+    </div>
+
+    <a href="index.html#news" class="back-link">← NEWSに戻る</a>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">スマイルプラスコンサルティング</div>
+    <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);margin-bottom:12px;">AI活用支援・Webコンサル・セミナー講師｜全国対応</div>
+    <div class="footer-policy"><a href="privacy.html">Privacy Policy</a></div>
+    <div class="footer-copy">© Smile Plus Consulting. All rights reserved.</div>
+  </footer>
+
+  <script src="chat.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); });
+    });
+  </script>
+</body>
+</html>
