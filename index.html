@@ -1488,6 +1488,7 @@
     .badge-info { background: rgba(255,255,255,0.2); color: white; }
     .badge-partner { background: #06C755; color: white; }
     .badge-event { background: #f59e0b; color: #0d1b2e; }
+    .badge-security { background: #e85d04; color: white; }
 
     .news-text {
       font-size: 0.78rem;
@@ -1848,6 +1849,11 @@
             <div class="hero-news-sub">お知らせ・最新情報</div>
           </div>
           <div class="news-list">
+            <div class="news-item">
+              <span class="news-date">2026.10.23</span>
+              <span class="news-badge badge-security">🔒 セキュリティ</span>
+              <span class="news-text"><a href="news-php.html">PHP脆弱性についてのご報告（CVSS 9.2）対応状況をご案内します</a></span>
+            </div>
             <div class="news-item">
               <span class="news-date">2026.07.25</span>
               <span class="news-badge badge-event">リリース</span>
@@ -2297,7 +2303,10 @@
     </div>
     <div class="contact-form fade-in">
       <form id="contactForm">
-        <div class="form-group"><label>お名前</label><input type="text" name="name" id="fullName" placeholder="山田 太郎" required></div>
+        <div class="form-name-row">
+          <div class="form-group"><label>姓</label><input type="text" name="last_name" id="lastName" placeholder="山田" required></div>
+          <div class="form-group"><label>名</label><input type="text" name="first_name" id="firstName" placeholder="太郎" required></div>
+        </div>
         <div class="form-group"><label>メールアドレス</label><input type="email" name="email" id="email" placeholder="example@gmail.com" required></div>
         <div class="form-group">
           <label>お問合せ内容 *</label>
@@ -2469,7 +2478,7 @@
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      document.getElementById('confirmName').textContent = document.getElementById('fullName').value;
+      document.getElementById('confirmName').textContent = document.getElementById('lastName').value + ' ' + document.getElementById('firstName').value;
       document.getElementById('confirmEmail').textContent = document.getElementById('email').value;
       document.getElementById('confirmSubject').textContent = document.getElementById('subject').value;
       document.getElementById('confirmMessage').textContent = document.getElementById('message').value || '(なし)';
@@ -2479,7 +2488,7 @@
     btnCancel.addEventListener('click', () => { modal.style.display = 'none'; });
 
     btnFinalSend.addEventListener('click', () => {
-      const name = document.getElementById('fullName').value;
+      const name = document.getElementById('lastName').value + ' ' + document.getElementById('firstName').value;
       const email = document.getElementById('email').value;
       const subject = document.getElementById('subject').value;
       const message = document.getElementById('message').value || '(なし)';
