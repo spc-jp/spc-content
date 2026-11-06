@@ -90,6 +90,9 @@
     .topbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid #eaeaf0;box-shadow:0 4px 30px rgba(0,0,40,.025)}
     .nav-inner{width:min(1220px,calc(100% - 64px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:79px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap}
+    .brand-logo{display:block;height:48px;width:auto;max-width:min(260px,60vw);object-fit:contain}
+    .brand-fallback{color:var(--navy);font-weight:700;font-size:1rem}
+    @media(max-width:480px){.brand-logo{height:40px;max-width:65vw}}
     .brand-mark{display:grid;place-items:center;width:44px;height:44px;background:var(--navy);color:#fff;font-family:Georgia,serif;letter-spacing:-.06em;font-weight:700;font-size:19px;border-radius:4px}
     .brand-text{font-weight:700;color:var(--navy);font-size:.96rem;letter-spacing:.01em;line-height:1.35}
     .brand-text small{display:block;font-size:.59rem;font-weight:500;letter-spacing:.18em;color:#8d92a3}
@@ -209,7 +212,7 @@
   <header class="topbar">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="SPCトップページへ">
-        <span class="brand-mark">SPC</span><span class="brand-text">Smile Plus Consulting<small>スマイルプラスコンサルティング</small></span>
+        <img class="brand-logo" src="rogo.png" alt="スマイルプラスコンサルティング（SPC）" width="220" height="48" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span class="brand-fallback" style="display:none;">SPC｜Smile Plus Consulting</span>
       </a>
       <nav class="nav-menu" id="site-menu" aria-label="サイト内メニュー">
         <a class="active" href="profile.html" aria-current="page">私達について</a>
