@@ -1803,6 +1803,31 @@
       }
     }
 
+
+    /* SPC代表紹介：A案「経験と信頼」。他のセクションへの影響を防ぐスコープ指定 */
+    .profile .spc-founder-inner{max-width:1000px;display:grid;grid-template-columns:225px minmax(0,1fr);align-items:center;gap:clamp(28px,5vw,65px);flex-wrap:nowrap}
+    .profile .spc-founder-portrait{width:225px;max-width:100%;padding:8px 8px 12px 0;position:relative}
+    .profile .spc-founder-portrait::before{content:"";position:absolute;inset:0 0 3px 10px;border:1px solid #c5a36a;border-radius:5px 5px 38px 5px}
+    .profile .spc-founder-portrait img{width:100%;height:265px;object-fit:cover;object-position:36% 42%;border-radius:5px 5px 35px 5px;position:relative;box-shadow:0 12px 30px rgba(0,0,55,.12)}
+    .profile .spc-founder-inner .profile-text{min-width:0;text-align:left}
+    .profile .spc-founder-kicker{color:#a18a61;font-size:.72rem;letter-spacing:.17em;font-weight:700;margin:0 0 5px}
+    .profile .spc-founder-inner h2{font-size:clamp(1.5rem,2.8vw,2rem);color:#000066;margin:0 0 5px;line-height:1.4}
+    .profile .spc-founder-en{font-family:Georgia,serif;font-weight:400;font-size:.73rem;white-space:nowrap;color:#6e7486;margin-left:10px;letter-spacing:.025em}
+    .profile .spc-founder-role{font-size:.8rem;color:#5f687a;margin:0 0 15px}
+    .profile .spc-founder-catch{font-family:'Noto Serif JP',serif;font-size:clamp(1.17rem,2.5vw,1.55rem);font-weight:700;line-height:1.65;color:#000066;margin:0 0 12px}
+    .profile .spc-founder-inner .profile-text>p:not(.spc-founder-kicker):not(.spc-founder-role){max-width:680px;line-height:1.9}
+    .profile .spc-founder-more{display:inline-flex;gap:14px;align-items:center;text-decoration:none;border:1px solid #000066;border-radius:5px;padding:10px 18px;color:#000066;font-size:.83rem;font-weight:700;margin-top:19px;transition:background .2s,color .2s}
+    .profile .spc-founder-more:hover{background:#000066;color:#fff}
+    .profile .spc-founder-inner .profile-sns{margin-top:20px}
+    @media(max-width:768px){
+      .profile .spc-founder-inner{display:flex;flex-direction:column;gap:22px}
+      .profile .spc-founder-portrait{width:190px;align-self:center}
+      .profile .spc-founder-portrait img{height:220px}
+      .profile .spc-founder-inner .profile-text{text-align:left;width:100%}
+      .profile .spc-founder-inner .profile-sns{justify-content:flex-start}
+      .profile .spc-founder-en{display:block;margin:5px 0 0}
+      .profile .spc-founder-catch{font-size:1.35rem}
+    }
   </style>
 </head>
 <body>
@@ -2249,18 +2274,24 @@
   </section>
 
   <!-- CTAセクション -->
-  <section class="profile" id="profile">
-    <div class="profile-inner">
+  <section class="profile" id="profile" aria-labelledby="spc-founder-name">
+    <div class="profile-inner spc-founder-inner">
+      <div class="spc-founder-portrait fade-in">
+        <img src="matsumoto-profile.webp" width="1536" height="1024" alt="スマイルプラスコンサルティング代表・松本由也のプロフィール写真" loading="lazy" decoding="async">
+      </div>
       <div class="profile-text fade-in">
-        <h2>Yoshiya Matsumoto</h2>
-        <div class="name-en">YoshiBon / スマイルプラスコンサルティング</div>
-        <p>中小企業の経営者は、日々たくさんの課題に向き合っています。私たちは、数字や広告のテクニックだけでなく「経営者の想い」を大切にしながら伴走します。<br><br>WebやSNSを使った発信も、ただの仕組みづくりではなく、想いを届けるための手段と考えています。「誰に、どう届けるか」を一緒に考え、成果につながる一歩を共に描いていきます。</p>
-        <div class="profile-sns">
-          <a href="https://www.facebook.com/spcyoshiya" class="sns-btn sns-fb" target="_blank">Facebook</a>
-          <a href="https://www.instagram.com/yoshibon.style/" class="sns-btn sns-ig" target="_blank">Instagram</a>
-          <a href="https://www.youtube.com/@YoshiBonpj" class="sns-btn sns-yt" target="_blank">YouTube</a>
-          <a href="https://lin.ee/s9t1ERI" class="sns-btn sns-line" target="_blank">LINE</a>
-          <a href="https://note.com/_yoshibon" class="sns-btn sns-note" target="_blank">note</a>
+        <p class="spc-founder-kicker">FOUNDER PROFILE — SPC</p>
+        <h2 id="spc-founder-name">松本 由也 <span class="spc-founder-en">Yoshiya Matsumoto</span></h2>
+        <p class="spc-founder-role">Smile Plus Consulting 代表｜中小企業のAI・Web活用パートナー</p>
+        <h3 class="spc-founder-catch">経験とAIで、<br>企業の可能性をカタチにする。</h3>
+        <p>20年以上の中小企業支援経験と、最新のAI・Web技術を組み合わせて。経営者の想いに寄り添い、企業の強みを未来につなぐ仕組みづくりをお手伝いします。</p>
+        <a class="spc-founder-more" href="profile.html">松本由也の詳しいプロフィールを見る <span aria-hidden="true">→</span></a>
+        <div class="profile-sns" aria-label="代表のSNS">
+          <a href="https://www.facebook.com/spcyoshiya" class="sns-btn sns-fb" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/yoshibon.style/" class="sns-btn sns-ig" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@YoshiBonpj" class="sns-btn sns-yt" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://lin.ee/s9t1ERI" class="sns-btn sns-line" target="_blank" rel="noopener noreferrer">LINE</a>
+          <a href="https://note.com/_yoshibon" class="sns-btn sns-note" target="_blank" rel="noopener noreferrer">note</a>
         </div>
       </div>
     </div>
